@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  <link href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "aace4c93"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="400DfQ_7d8nIiCWZsPxHkLjjR4UbEUib2LyWBaTWFJ4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+<link href="https://fonts.loli.net/css?family=EB+Garamond:400,400i,700,700i|Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet">
+
+
+
+
+  
+
+<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,区块链,XRP," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Xyange's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="瑞波币助记词生成公私钥、地址、查余额、转账等相关功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Java的Android区块链钱包开发(XRP篇)">
+<meta property="og:url" content="https://xyange.xyz/archives/7937af06/index.html">
+<meta property="og:site_name" content="Xyange&#39;s Blog">
+<meta property="og:description" content="瑞波币助记词生成公私钥、地址、查余额、转账等相关功能。">
+<meta property="article:published_time" content="2020-03-13T05:52:00.000Z">
+<meta property="article:modified_time" content="2020-12-22T08:00:08.785Z">
+<meta property="article:author" content="小眼哥">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="区块链">
+<meta property="article:tag" content="XRP">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"flipYIn","post_header":"perspectiveRightIn","post_body":"perspectiveLeftIn","coll_header":"perspectiveDownIn","sidebar":"perspectiveUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xyange.xyz/archives/7937af06/"/>
+
+
+
+
+
+<!-- 设置文章需要密码访问 -->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>基于Java的Android区块链钱包开发(XRP篇) | Xyange's Blog</title>
+
+  
+      <!-- 球型气泡标签云 -->
+      <script type="text/javascript" src="/js/src/bubble.js"></script>
+  
+
+  
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <!--fork me from github-->
+    <a href="https://github.com/xyange" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xyange's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">唯有梦想与好姑娘不可辜负</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            <div id="content" class="content">
+              
+
+  <div id="posts" class="posts-expand">
+  <div id="container-xy">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xyange.xyz/archives/7937af06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小眼哥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xyange's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">基于Java的Android区块链钱包开发(XRP篇)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+             
+
+             
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T13:52:00+08:00">
+                2020-03-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-22T16:00:08+08:00">
+                2020-12-22
+              </time>
+            
+          </span>
+        
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index">
+                    <span itemprop="name">区块链</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/archives/7937af06/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/7937af06/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          <!---->
+
+        
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <span class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数&#58;</span>
+                
+                <span title="字数">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  33 分钟
+                </span>
+              
+            </span>
+          
+
+          <!-- 隐藏文章内标题下，内容描述
+          
+              <div class="post-description">
+                  瑞波币助记词生成公私钥、地址、查余额、转账等相关功能。
+              </div>
+          
+          -->
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>首先要生成12个助记词，<a href="/archives/9d612c0/">区块链开发之生成12个助记词</a></p>
+<h2 id="使用的库"><a href="#使用的库" class="headerlink" title="使用的库"></a>使用的库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &#39;org.bouncycastle:bcprov-jdk15on:1.59&#39;</span><br></pre></td></tr></table></figure></div>
+<h2 id="具体代码如下"><a href="#具体代码如下" class="headerlink" title="具体代码如下"></a>具体代码如下</h2><h3 id="生成公私钥、地址"><a href="#生成公私钥、地址" class="headerlink" title="生成公私钥、地址"></a>生成公私钥、地址</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">public static void TestBip44XRP(String mnemonic)&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            if(Data.getbledata().contains(&quot;XRP&quot;)) &#123;</span><br><span class="line">                DeterministicSeed deterministicSeed &#x3D; new DeterministicSeed(mnemonic, null, &quot;Hierstar ComboWallet Salt&quot;, 0);</span><br><span class="line">                Log.i(&quot;BIP39 seed:&#123;&#125;&quot;, deterministicSeed.toHexString());</span><br><span class="line">                DeterministicKeyChain deterministicKeyChain &#x3D; DeterministicKeyChain.builder().seed(deterministicSeed).build();</span><br><span class="line">                String privKeywifXRP &#x3D; deterministicKeyChain.getKeyByPath(parsePath(&quot;M&#x2F;44H&#x2F;144H&#x2F;0H&quot;), true).getPrivateKeyAsWiF(TestNet3Params.get());&#x2F;&#x2F;压缩私钥</span><br><span class="line">                String privKeyHexXRP &#x3D; deterministicKeyChain.getKeyByPath(parsePath(&quot;M&#x2F;44H&#x2F;144H&#x2F;0H&quot;), true).getPrivateKeyAsHex();&#x2F;&#x2F;非压缩私钥</span><br><span class="line">                String pubKeyHexXRP &#x3D; deterministicKeyChain.getKeyByPath(parsePath(&quot;M&#x2F;44H&#x2F;144H&#x2F;0H&quot;), true).getPublicKeyAsHex();&#x2F;&#x2F;压缩公钥</span><br><span class="line">&#x2F;&#x2F;                System.out.println(&quot;XRP Private key (256 bits): &quot; + privKeyHexXRP);</span><br><span class="line">&#x2F;&#x2F;                System.out.println(&quot;XRP Public key (512 bits): &quot; + pubKeyHexXRP);</span><br><span class="line">                Data.setbizhong(&quot;XRP&quot;);</span><br><span class="line">                Data.setdata(pubKeyHexXRP);</span><br><span class="line">                String address &#x3D; Utils.address();</span><br><span class="line">                Data.setxrppub(pubKeyHexXRP);</span><br><span class="line">                Data.setxrpprv(privKeyHexXRP);</span><br><span class="line">                Data.setxrpaddress(address);</span><br><span class="line">                Bitmap codeBitmap &#x3D; Utils.createCode(address);</span><br><span class="line">                Data.setxrpimgCode(codeBitmap);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                Data.setxrppub(&quot;&quot;);</span><br><span class="line">                Data.setxrpprv(&quot;&quot;);</span><br><span class="line">                Data.setxrpaddress(&quot;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#x2F;**</span><br><span class="line">     * 公钥转为地址</span><br><span class="line">     *</span><br><span class="line">     * @return</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static String address() &#123;</span><br><span class="line">        String address &#x3D; &quot;&quot;;</span><br><span class="line">        </span><br><span class="line">            try &#123;</span><br><span class="line">                Thread.sleep(1000);</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            LogCook.d(&quot;xrp公钥&quot;, Data.getdata());</span><br><span class="line">            byte[] publicKey &#x3D; new BigInteger(Data.getdata(), 16).toByteArray();</span><br><span class="line">            byte[] sha256Bytes &#x3D; Utils.sha256(publicKey);</span><br><span class="line">            System.out.println(&quot;sha256加密&#x3D;&quot; + Utils.bytesToHexString(sha256Bytes));</span><br><span class="line">            RIPEMD160Digest digest &#x3D; new RIPEMD160Digest();</span><br><span class="line">            digest.update(sha256Bytes, 0, sha256Bytes.length);</span><br><span class="line">            byte[] ripemd160Bytes &#x3D; new byte[digest.getDigestSize()];</span><br><span class="line">            digest.doFinal(ripemd160Bytes, 0);</span><br><span class="line">            System.out.println(&quot;ripemd160加密&#x3D;&quot; + Utils.bytesToHexString(ripemd160Bytes));</span><br><span class="line">            byte[] networkID &#x3D; new BigInteger(&quot;00&quot;, 16).toByteArray();</span><br><span class="line">            byte[] extendedRipemd160Bytes &#x3D; Utils.add(networkID, ripemd160Bytes);</span><br><span class="line">            System.out.println(&quot;添加NetworkID&#x3D;&quot; + Utils.bytesToHexString(extendedRipemd160Bytes));</span><br><span class="line">            byte[] twiceSha256Bytes &#x3D; Utils.sha256(Utils.sha256(extendedRipemd160Bytes));</span><br><span class="line">            System.out.println(&quot;两次sha256加密&#x3D;&quot; + Utils.bytesToHexString(twiceSha256Bytes));</span><br><span class="line">            byte[] checksum &#x3D; new byte[4];</span><br><span class="line">            System.arraycopy(twiceSha256Bytes, 0, checksum, 0, 4);</span><br><span class="line">            System.out.println(&quot;checksum&#x3D;&quot; + Utils.bytesToHexString(checksum));</span><br><span class="line">            byte[] binaryXRPAddressBytes &#x3D; Utils.add(extendedRipemd160Bytes,checksum);</span><br><span class="line">            System.out.println(&quot;添加checksum之后&#x3D;&quot; + Utils.bytesToHexString(binaryXRPAddressBytes));</span><br><span class="line">            address &#x3D; UtilsBase58.xrpencode(binaryXRPAddressBytes);</span><br><span class="line">            System.out.println(&quot;XRPAddress&#x3D;&quot; + address);</span><br><span class="line">            Data.setxrpaddress(address);</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="查余额-交易过程"><a href="#查余额-交易过程" class="headerlink" title="查余额 交易过程"></a>查余额 交易过程</h3><p>瑞波币需要先转入20个币进行绑定后才能使用，这20个币不能进行交易，需要继续转入币种进行交易。<br>瑞波币代币AED需要先trustset(获取网关信任)后才能正常交易。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">     * 获取xrp余额</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void getxrpamount() &#123;</span><br><span class="line">        if(Data.getbledata().contains(&quot;XRP&quot;)) &#123;</span><br><span class="line">            new Thread(new Runnable() &#123;</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    String result &#x3D; &quot;&quot;;</span><br><span class="line">                    Looper.prepare();</span><br><span class="line">                    try &#123;</span><br><span class="line">                        String data &#x3D; &quot;&#123;\&quot;account\&quot;:\&quot;&quot; + Data.getxrpaddress() + &quot;\&quot;&#125;&quot;;</span><br><span class="line">                        data &#x3D; URLEncoder.encode(data, &quot;UTF-8&quot;);</span><br><span class="line">                        String urlName &#x3D; Data.gethttp1() + &quot;&#x2F;hsRPCNodeServer&#x2F;xrp&#x2F;getBalance?jsonParams&#x3D;&quot; + data;</span><br><span class="line">                        LogCook.d(&quot;发送参数&quot;, urlName);</span><br><span class="line">                        URL U &#x3D; new URL(urlName);</span><br><span class="line">                        URLConnection connection &#x3D; U.openConnection();</span><br><span class="line">                        connection.connect();</span><br><span class="line">                        BufferedReader in &#x3D; new BufferedReader(new InputStreamReader(connection.getInputStream()));</span><br><span class="line">                        String line;</span><br><span class="line">                        while ((line &#x3D; in.readLine()) !&#x3D; null) &#123;</span><br><span class="line">                            result +&#x3D; line;</span><br><span class="line">                        &#125;</span><br><span class="line">                        LogCook.d(&quot;获取xrp余额&#x2F;交易序号返回数据&quot;, result);</span><br><span class="line">                        in.close();</span><br><span class="line">                        JSONObject jsonObject &#x3D; new JSONObject(result);</span><br><span class="line">                        if (jsonObject.getString(&quot;status_Sucess&quot;).equals(&quot;true&quot;)) &#123;</span><br><span class="line">                            result &#x3D; jsonObject.getString(&quot;status_Result&quot;);</span><br><span class="line">                            int index &#x3D; getIndex(result, 1, &quot;#&quot;);</span><br><span class="line">                            String balance &#x3D; result.substring(0, index);</span><br><span class="line">                            balance &#x3D; String.valueOf(Double.parseDouble(balance) &#x2F; 1000000);</span><br><span class="line">                            String sequence &#x3D; result.substring(index + 1, result.length());</span><br><span class="line">                            LogCook.d(&quot;瑞波币余额&quot;, balance);</span><br><span class="line">                            Data.setxrpamount(balance);</span><br><span class="line">                            LogCook.d(&quot;瑞波币交易序号&quot;, sequence);</span><br><span class="line">                            Data.setxrpserialnumber(sequence);</span><br><span class="line">                            if (Data.getbizhong().equals(&quot;trustset&quot;)) &#123;</span><br><span class="line">                                new Transfer().trustsetcreatetransaction();</span><br><span class="line">                            &#125; else &#123;</span><br><span class="line">                                if (Data.gettype().equals(&quot;fragment3&quot;) || Data.gettype().equals(&quot;hottransfer&quot;)) &#123;</span><br><span class="line">                                    if (Data.getbizhong().equals(&quot;XRP&quot;)) &#123;</span><br><span class="line">                                        new Transfer().xrpcreatetransaction();</span><br><span class="line">                                    &#125; else if (Data.getbizhong().equals(&quot;AED&quot;)) &#123;</span><br><span class="line">                                        new Transfer().aedcreatetransaction();</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125; else &#123;</span><br><span class="line">                                    new Utilshttp().getaedamount();</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; else if (jsonObject.getString(&quot;status_Sucess&quot;).equals(&quot;false&quot;)) &#123;&#x2F;&#x2F;返回错误信息</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.uhttp24) +</span><br><span class="line">                                    jsonObject.getString(&quot;status_Result&quot;) + &quot;:&quot; + jsonObject.getString(&quot;status_Message&quot;), Toast.LENGTH_SHORT).show();</span><br><span class="line">                            if (Data.gettype().equals(&quot;fragment3&quot;) || Data.gettype().equals(&quot;jyxxactivity&quot;)) &#123;</span><br><span class="line">                                WeiboDialogUtils.closeDialog(Data.getdialog());</span><br><span class="line">                            &#125; else &#123;</span><br><span class="line">                                Data.setxrpamount(&quot;0&quot;);</span><br><span class="line">                                new Utilshttp().getaedamount();</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; catch (Exception e) &#123;</span><br><span class="line">                        if (Data.gettype().equals(&quot;fragment3&quot;) || Data.gettype().equals(&quot;jyxxactivity&quot;) || Data.gettype().equals(&quot;hottransfer&quot;)) &#123;</span><br><span class="line"></span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.uhttp24), Toast.LENGTH_SHORT).show();</span><br><span class="line">                            Data.setxrpamount(&quot;0&quot;);</span><br><span class="line">                            new Utilshttp().getaedamount();</span><br><span class="line">                        &#125;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Data.setxrpamount(&quot;0&quot;);</span><br><span class="line">            new Utilshttp().getaedamount();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * xrp交易</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void getxrpsendtransaction(String signdata) &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                String result &#x3D; &quot;&quot;;</span><br><span class="line">                try &#123;</span><br><span class="line">                    String data &#x3D; &quot;&#123;\&quot;tx_blob\&quot;:\&quot;&quot;+signdata+&quot;\&quot;&#125;&quot;;</span><br><span class="line">                    data &#x3D; URLEncoder.encode(data, &quot;UTF-8&quot;);</span><br><span class="line">                    String urlName &#x3D; Data.gethttp1()+&quot;&#x2F;hsRPCNodeServer&#x2F;xrp&#x2F;submit?jsonParams&#x3D;&quot;+data;</span><br><span class="line">                    &#x2F;&#x2F;String urlName &#x3D; &quot;http:&#x2F;&#x2F;192.171.1.78:8080&#x2F;hsRPCNodeServer&#x2F;xrp&#x2F;submit?jsonParams&#x3D;&quot;+data;</span><br><span class="line">                    LogCook.d(&quot;发送参数&quot;, urlName);</span><br><span class="line">                    URL U &#x3D; new URL(urlName);</span><br><span class="line">                    URLConnection connection &#x3D; U.openConnection();</span><br><span class="line">                    connection.connect();</span><br><span class="line">                    BufferedReader in &#x3D; new BufferedReader(new InputStreamReader(connection.getInputStream()));</span><br><span class="line">                    String line;</span><br><span class="line">                    while ((line &#x3D; in.readLine()) !&#x3D; null) &#123;</span><br><span class="line">                        result +&#x3D; line;</span><br><span class="line">                    &#125;</span><br><span class="line">                    LogCook.d(&quot;xrp交易返回数据&quot;, result);</span><br><span class="line">                    in.close();</span><br><span class="line">                    JSONObject jsonObject &#x3D; new JSONObject(result);</span><br><span class="line">                    if (jsonObject.getString(&quot;status_Result&quot;).equals(&quot;success&quot;)) &#123;</span><br><span class="line">                        Looper.prepare();</span><br><span class="line">                        if(Data.getbizhong().equals(&quot;trustset&quot;))&#123;</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff42), Toast.LENGTH_SHORT).show();</span><br><span class="line">                        &#125;else &#123;</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff32), Toast.LENGTH_SHORT).show();</span><br><span class="line">                            SimpleDateFormat formatter &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">                            Date curDate &#x3D; new Date(System.currentTimeMillis());</span><br><span class="line">                            String str &#x3D; formatter.format(curDate);</span><br><span class="line">                            if(Data.getbizhong().equals(&quot;XRP&quot;)) &#123;</span><br><span class="line">                                Data.getdb().execSQL(&quot;insert into JiaoyiTb (blename,name,bizhong,jine,riqi,type) values &quot; +</span><br><span class="line">                                        &quot;(&#39;&quot; + Data.getdevicename() + &quot;&#39;,&#39;&quot; + Data.getxrpaddress() + &quot;&#39;,&#39;XRP&#39;,&quot; + Data.getyue() + &quot;,&#39;&quot; + str + &quot;&#39;,1)&quot;);</span><br><span class="line">                            &#125;else if(Data.getbizhong().equals(&quot;AED&quot;)) &#123;</span><br><span class="line">                                Data.getdb().execSQL(&quot;insert into JiaoyiTb (blename,name,bizhong,jine,riqi,type) values &quot; +</span><br><span class="line">                                        &quot;(&#39;&quot; + Data.getdevicename() + &quot;&#39;,&#39;&quot; + Data.getxrpaddress() + &quot;&#39;,&#39;AED&#39;,&quot; + Data.getyue() + &quot;,&#39;&quot; + str + &quot;&#39;,1)&quot;);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        WeiboDialogUtils.closeDialog(Data.getdialog());</span><br><span class="line">                        Looper.loop();</span><br><span class="line">                    &#125; else if (jsonObject.getString(&quot;status_Result&quot;).equals(&quot;error&quot;)) &#123;&#x2F;&#x2F;返回错误信息</span><br><span class="line">                        Looper.prepare();</span><br><span class="line">                        if(Data.getbizhong().equals(&quot;trustset&quot;))&#123;</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff43), Toast.LENGTH_SHORT).show();</span><br><span class="line">                        &#125;else &#123;</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff30) +</span><br><span class="line">                                    jsonObject.getString(&quot;status_Result&quot;) + &quot;:&quot; + jsonObject.getString(&quot;status_Message&quot;), Toast.LENGTH_SHORT).show();</span><br><span class="line">                        &#125;</span><br><span class="line">                        WeiboDialogUtils.closeDialog(Data.getdialog());</span><br><span class="line">                        Looper.loop();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; catch (Exception e) &#123;</span><br><span class="line">                    Looper.prepare();</span><br><span class="line">                    if(Data.getbizhong().equals(&quot;trustset&quot;))&#123;</span><br><span class="line">                        Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff43), Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.fff30), Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                    WeiboDialogUtils.closeDialog(Data.getdialog());</span><br><span class="line">                    Looper.loop();</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 获取aed余额</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void getaedamount() &#123;</span><br><span class="line">        if(Data.getbledata().contains(&quot;AED&quot;)) &#123;</span><br><span class="line">            new Thread(new Runnable() &#123;</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    String result &#x3D; &quot;&quot;;</span><br><span class="line">                    Looper.prepare();</span><br><span class="line">                    try &#123;</span><br><span class="line">                        String data &#x3D; &quot;&#123;\&quot;account\&quot;:\&quot;&quot; + Data.getxrpaddress() + &quot;\&quot;,\&quot;currency\&quot;:\&quot;AED\&quot;&#125;&quot;;</span><br><span class="line">                        data &#x3D; URLEncoder.encode(data, &quot;UTF-8&quot;);</span><br><span class="line">                        String urlName &#x3D; Data.gethttp1() + &quot;&#x2F;hsRPCNodeServer&#x2F;xrp&#x2F;accountLines?jsonParams&#x3D;&quot; + data;</span><br><span class="line">                        LogCook.d(&quot;发送参数&quot;, urlName);</span><br><span class="line">                        URL U &#x3D; new URL(urlName);</span><br><span class="line">                        URLConnection connection &#x3D; U.openConnection();</span><br><span class="line">                        connection.connect();</span><br><span class="line">                        BufferedReader in &#x3D; new BufferedReader(new InputStreamReader(connection.getInputStream()));</span><br><span class="line">                        String line;</span><br><span class="line">                        while ((line &#x3D; in.readLine()) !&#x3D; null) &#123;</span><br><span class="line">                            result +&#x3D; line;</span><br><span class="line">                        &#125;</span><br><span class="line">                        LogCook.d(&quot;获取aed余额&#x2F;账号返回数据&quot;, result);</span><br><span class="line">                        in.close();</span><br><span class="line">                        JSONObject jsonObject &#x3D; new JSONObject(result);</span><br><span class="line">                        if (jsonObject.getString(&quot;status_Sucess&quot;).equals(&quot;true&quot;)) &#123;</span><br><span class="line">                            result &#x3D; jsonObject.getString(&quot;status_Result&quot;);</span><br><span class="line">                            int index &#x3D; getIndex(result, 1, &quot;#&quot;);</span><br><span class="line">                            String sequence &#x3D; result.substring(0, index);</span><br><span class="line">                            String balance &#x3D; result.substring(index + 1, result.length());</span><br><span class="line">                            LogCook.d(&quot;瑞波代币余额&quot;, balance);</span><br><span class="line">                            Data.setaedamount(balance);</span><br><span class="line">                            LogCook.d(&quot;瑞波代币发行地址&quot;, sequence);</span><br><span class="line">                            new Utils().send2();</span><br><span class="line">                        &#125; else if (jsonObject.getString(&quot;status_Sucess&quot;).equals(&quot;false&quot;)) &#123;&#x2F;&#x2F;返回错误信息</span><br><span class="line">                            Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.uhttp25) +</span><br><span class="line">                                    jsonObject.getString(&quot;status_Result&quot;) + &quot;:&quot; + jsonObject.getString(&quot;status_Message&quot;), Toast.LENGTH_SHORT).show();</span><br><span class="line">                            Data.setaedamount(&quot;0&quot;);</span><br><span class="line">                            Data.setaedaddress(&quot;&quot;);</span><br><span class="line">                            new Utils().send2();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; catch (Exception e) &#123;</span><br><span class="line">                        Toast.makeText(Data.getcontext(), Data.getcontext().getResources().getString(R.string.uhttp25), Toast.LENGTH_SHORT).show();</span><br><span class="line">                        Data.setaedamount(&quot;0&quot;);</span><br><span class="line">                        Data.setaedaddress(&quot;&quot;);</span><br><span class="line">                        new Utils().send2();</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    Data.setaedaddress(&quot;rKHHaXA3k3DUvZsCbdLGnUjyopuXYbEAKF&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Data.setaedamount(&quot;0&quot;);</span><br><span class="line">            if(!Data.gettype().equals(&quot;createOrimport&quot;)) &#123;</span><br><span class="line">                if (!Data.getbledata().contains(&quot;XRP&quot;))&#123;</span><br><span class="line">                    if(!Data.gettype().equals(&quot;recover&quot;)) &#123;</span><br><span class="line">                        if (!Data.gettype().equals(&quot;verification&quot;)) &#123;</span><br><span class="line">                            if (!Data.gettype().equals(&quot;type&quot;)) &#123;</span><br><span class="line">                                Looper.prepare();</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            new Utils().send2();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#x2F;**</span><br><span class="line">     *xrp构造待签名数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void xrpcreatetransaction()&#123;</span><br><span class="line">        String data1&#x3D;&quot;53545800120000228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;6140000000&quot;;</span><br><span class="line">        String data4&#x3D;Integer.toHexString(Integer.parseInt(Data.getyue()));</span><br><span class="line">        for(int i&#x3D;data4.length();i&lt;8;i++)&#123;</span><br><span class="line">            data4&#x3D;&quot;0&quot;+data4;</span><br><span class="line">        &#125;</span><br><span class="line">        String data5&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data8&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data8&#x3D;data8.substring(0,data8.length()-8);</span><br><span class="line">        String data9&#x3D;&quot;8314&quot;;</span><br><span class="line">        String data10&#x3D; UtilsBase58.xrpdecode(Data.getto());</span><br><span class="line">        data10&#x3D;data10.substring(0,data10.length()-8);</span><br><span class="line">        if(Data.getapptype().equals(&quot;cold&quot;)) &#123;</span><br><span class="line">            sign(data1 + data2 + data3 + data4 + data5 + data6 + data7 + data8 + data9 + data10);&#x2F;&#x2F;进行签名</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            String data&#x3D; String.format(&quot;%s%s%s%s%s%s%s%s%s%s&quot;, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10);</span><br><span class="line">            LogCook.d(&quot;待签名信息&quot;,data);</span><br><span class="line">            byte[] bytes &#x3D; new byte[data.length() &#x2F; 2];</span><br><span class="line">            for (int i &#x3D; 0; i &lt; data.length() &#x2F; 2; i++) &#123;&#x2F;&#x2F;16进制字符串转byte[]</span><br><span class="line">                String subStr &#x3D; data.substring(i * 2, i * 2 + 2);</span><br><span class="line">                bytes[i] &#x3D; (byte) Integer.parseInt(subStr, 16);</span><br><span class="line">            &#125;</span><br><span class="line">            byte[] hash &#x3D; HashUtils.halfSha512(bytes);</span><br><span class="line">            String resultsign&#x3D;Utils.bytesToHexString(K256KeyPair.signHash(hash, new BigInteger(Data.getxrpprv(),16)));</span><br><span class="line">            xrpsendtransaction(resultsign);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     *xrp发送交易数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void xrpsendtransaction(String sign)&#123;</span><br><span class="line">        String data1&#x3D;&quot;120000228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;6140000000&quot;;</span><br><span class="line">        String data4&#x3D;Integer.toHexString(Integer.parseInt(Data.getyue()));</span><br><span class="line">        for(int i&#x3D;data4.length();i&lt;8;i++)&#123;</span><br><span class="line">            data4&#x3D;&quot;0&quot;+data4;</span><br><span class="line">        &#125;</span><br><span class="line">        String data5&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;74&quot;;</span><br><span class="line">        String data8&#x3D;strlength(sign);</span><br><span class="line">        String data9&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data10&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data10&#x3D;data10.substring(0,data10.length()-8);</span><br><span class="line">        String data11&#x3D;&quot;8314&quot;;</span><br><span class="line">        String data12&#x3D; UtilsBase58.xrpdecode(Data.getto());</span><br><span class="line">        data12&#x3D;data12.substring(0,data12.length()-8);</span><br><span class="line">        new Utilshttp().getxrpsendtransaction(data1+data2+data3+data4+data5+data6+data7+data8+sign+data9+data10+data11+data12);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     *瑞波币代币构造待签名数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void aedcreatetransaction()&#123;</span><br><span class="line">        String data1&#x3D;&quot;53545800120000228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;61&quot;;</span><br><span class="line">        String data4&#x3D;Utils.tozhishu();</span><br><span class="line">        String data5&#x3D;&quot;0000000000000000000000004145440000000000&quot;;</span><br><span class="line">        String data51&#x3D;&quot;C8865AF270B553E2B2DB2371B703EC4D253D9F42&quot;;</span><br><span class="line">        String data52&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data8&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data8&#x3D;data8.substring(0,data8.length()-8);</span><br><span class="line">        String data9&#x3D;&quot;8314&quot;;</span><br><span class="line">        String data10&#x3D; UtilsBase58.xrpdecode(Data.getto());</span><br><span class="line">        data10&#x3D;data10.substring(0,data10.length()-8);</span><br><span class="line">        if(Data.getapptype().equals(&quot;cold&quot;)) &#123;</span><br><span class="line">            sign(data1+data2+data3+data4+data5+data51+data52+data6+data7+data8+data9+data10);&#x2F;&#x2F;进行签名</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            String data&#x3D; String.format(&quot;%s%s%s%s%s%s%s%s%s%s%s%s&quot;, data1, data2, data3, data4, data5, data51, data52, data6, data7, data8, data9, data10);</span><br><span class="line">            LogCook.d(&quot;待签名信息&quot;,data);</span><br><span class="line">            byte[] bytes &#x3D; new byte[data.length() &#x2F; 2];</span><br><span class="line">            for (int i &#x3D; 0; i &lt; data.length() &#x2F; 2; i++) &#123;&#x2F;&#x2F;16进制字符串转byte[]</span><br><span class="line">                String subStr &#x3D; data.substring(i * 2, i * 2 + 2);</span><br><span class="line">                bytes[i] &#x3D; (byte) Integer.parseInt(subStr, 16);</span><br><span class="line">            &#125;</span><br><span class="line">            byte[] hash &#x3D; HashUtils.halfSha512(bytes);</span><br><span class="line">            String resultsign&#x3D;Utils.bytesToHexString(K256KeyPair.signHash(hash, new BigInteger(Data.getxrpprv(),16)));</span><br><span class="line">            aedsendtransaction(resultsign);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     *aed发送交易数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void aedsendtransaction(String sign)&#123;</span><br><span class="line">        String data1&#x3D;&quot;120000228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;61&quot;;</span><br><span class="line">        String data4&#x3D;Utils.tozhishu();</span><br><span class="line">        String data5&#x3D;&quot;0000000000000000000000004145440000000000&quot;;</span><br><span class="line">        String data51&#x3D;&quot;C8865AF270B553E2B2DB2371B703EC4D253D9F42&quot;;</span><br><span class="line">        String data52&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;74&quot;;</span><br><span class="line">        String data8&#x3D;strlength(sign);</span><br><span class="line">        String data9&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data10&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data10&#x3D;data10.substring(0,data10.length()-8);</span><br><span class="line">        String data11&#x3D;&quot;8314&quot;;</span><br><span class="line">        String data12&#x3D; UtilsBase58.xrpdecode(Data.getto());</span><br><span class="line">        data12&#x3D;data12.substring(0,data12.length()-8);</span><br><span class="line">        new Utilshttp().getxrpsendtransaction(data1+data2+data3+data4+data5+data51+data52+data6+data7+data8+sign+data9+data10+data11+data12);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     *trustset构造待签名数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void trustsetcreatetransaction()&#123;</span><br><span class="line">        String data1&#x3D;&quot;53545800120014228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;63&quot;;</span><br><span class="line">        String data4&#x3D;Utils.tozhishu();</span><br><span class="line">        String data5&#x3D;&quot;0000000000000000000000004145440000000000&quot;;</span><br><span class="line">        String data51&#x3D;&quot;C8865AF270B553E2B2DB2371B703EC4D253D9F42&quot;;</span><br><span class="line">        String data52&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data8&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data8&#x3D;data8.substring(0,data8.length()-8);</span><br><span class="line">        if(Data.getapptype().equals(&quot;cold&quot;)) &#123;</span><br><span class="line">            sign(data1+data2+data3+data4+data5+data51+data52+data6+data7+data8);&#x2F;&#x2F;进行签名</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            String data&#x3D; String.format(&quot;%s%s%s%s%s%s%s%s%s%s&quot;, data1, data2, data3, data4, data5, data51, data52, data6, data7, data8);</span><br><span class="line">            LogCook.d(&quot;待签名信息&quot;,data);</span><br><span class="line">            byte[] bytes &#x3D; new byte[data.length() &#x2F; 2];</span><br><span class="line">            for (int i &#x3D; 0; i &lt; data.length() &#x2F; 2; i++) &#123;&#x2F;&#x2F;16进制字符串转byte[]</span><br><span class="line">                String subStr &#x3D; data.substring(i * 2, i * 2 + 2);</span><br><span class="line">                bytes[i] &#x3D; (byte) Integer.parseInt(subStr, 16);</span><br><span class="line">            &#125;</span><br><span class="line">            byte[] hash &#x3D; HashUtils.halfSha512(bytes);</span><br><span class="line">            String resultsign&#x3D;Utils.bytesToHexString(K256KeyPair.signHash(hash, new BigInteger(Data.getxrpprv(),16)));</span><br><span class="line">            trustsetsendtransaction(resultsign);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     *trustset发送交易数据</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public void trustsetsendtransaction(String sign)&#123;</span><br><span class="line">        String data1&#x3D;&quot;120014228000000024&quot;;</span><br><span class="line">        String data2&#x3D;Integer.toHexString(Integer.parseInt(Data.getxrpserialnumber()));</span><br><span class="line">        for(int i&#x3D;data2.length();i&lt;8;i++)&#123;</span><br><span class="line">            data2&#x3D;&quot;0&quot;+data2;</span><br><span class="line">        &#125;</span><br><span class="line">        String data3&#x3D;&quot;63&quot;;</span><br><span class="line">        String data4&#x3D;Utils.tozhishu();</span><br><span class="line">        String data5&#x3D;&quot;0000000000000000000000004145440000000000&quot;;</span><br><span class="line">        String data51&#x3D;&quot;C8865AF270B553E2B2DB2371B703EC4D253D9F42&quot;;</span><br><span class="line">        String data52&#x3D;&quot;68400000000000000C7321&quot;;</span><br><span class="line">        String data6&#x3D;Data.getxrppub();</span><br><span class="line">        String data7&#x3D;&quot;74&quot;;</span><br><span class="line">        String data8&#x3D;strlength(sign);</span><br><span class="line">        String data9&#x3D;&quot;8114&quot;;</span><br><span class="line">        String data10&#x3D; UtilsBase58.xrpdecode(Data.getxrpaddress());</span><br><span class="line">        data10&#x3D;data10.substring(0,data10.length()-8);</span><br><span class="line">        new Utilshttp().getxrpsendtransaction(data1+data2+data3+data4+data5+data51+data52+data6+data7+data8+sign+data9+data10);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="ECDSASignature工具类"><a href="#ECDSASignature工具类" class="headerlink" title="ECDSASignature工具类"></a>ECDSASignature工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line">import org.bouncycastle.asn1.ASN1InputStream;</span><br><span class="line">import org.bouncycastle.asn1.ASN1Integer;</span><br><span class="line">import org.bouncycastle.asn1.DERSequenceGenerator;</span><br><span class="line">import org.bouncycastle.asn1.DLSequence;</span><br><span class="line"></span><br><span class="line">import java.io.ByteArrayOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.math.BigInteger;</span><br><span class="line"></span><br><span class="line">public class ECDSASignature &#123;</span><br><span class="line">    &#x2F;** The two components of the signature. *&#x2F;</span><br><span class="line">    public BigInteger r, s;</span><br><span class="line"></span><br><span class="line">    &#x2F;** Constructs a signature with the given components. *&#x2F;</span><br><span class="line">    public ECDSASignature(BigInteger r, BigInteger s) &#123;</span><br><span class="line">        this.r &#x3D; r;</span><br><span class="line">        this.s &#x3D; s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static boolean isStrictlyCanonical(byte[] sig) &#123;</span><br><span class="line">        return checkIsCanonical(sig, true);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static boolean checkIsCanonical(byte[] sig, boolean strict) &#123;</span><br><span class="line">        &#x2F;&#x2F; Make sure signature is canonical</span><br><span class="line">        &#x2F;&#x2F; To protect against signature morphing attacks</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Signature should be:</span><br><span class="line">        &#x2F;&#x2F; &lt;30&gt; &lt;len&gt; [ &lt;02&gt; &lt;lenR&gt; &lt;R&gt; ] [ &lt;02&gt; &lt;lenS&gt; &lt;S&gt; ]</span><br><span class="line">        &#x2F;&#x2F; where</span><br><span class="line">        &#x2F;&#x2F; 6 &lt;&#x3D; len &lt;&#x3D; 70</span><br><span class="line">        &#x2F;&#x2F; 1 &lt;&#x3D; lenR &lt;&#x3D; 33</span><br><span class="line">        &#x2F;&#x2F; 1 &lt;&#x3D; lenS &lt;&#x3D; 33</span><br><span class="line"></span><br><span class="line">        int sigLen &#x3D; sig.length;</span><br><span class="line"></span><br><span class="line">        if ((sigLen &lt; 8) || (sigLen &gt; 72))</span><br><span class="line">            return false;</span><br><span class="line"></span><br><span class="line">        if ((sig[0] !&#x3D; 0x30) || (sig[1] !&#x3D; (sigLen - 2)))</span><br><span class="line">            return false;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Find R and check its length</span><br><span class="line">        int rPos &#x3D; 4, rLen &#x3D; sig[rPos - 1];</span><br><span class="line"></span><br><span class="line">        if ((rLen &lt; 1) || (rLen &gt; 33) || ((rLen + 7) &gt; sigLen))</span><br><span class="line">            return false;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Find S and check its length</span><br><span class="line">        int sPos &#x3D; rLen + 6, sLen &#x3D; sig[sPos - 1];</span><br><span class="line">        if ((sLen &lt; 1) || (sLen &gt; 33) || ((rLen + sLen + 6) !&#x3D; sigLen))</span><br><span class="line">            return false;</span><br><span class="line"></span><br><span class="line">        if ((sig[rPos - 2] !&#x3D; 0x02) || (sig[sPos - 2] !&#x3D; 0x02))</span><br><span class="line">            return false; &#x2F;&#x2F; R or S have wrong type</span><br><span class="line"></span><br><span class="line">        if ((sig[rPos] &amp; 0x80) !&#x3D; 0)</span><br><span class="line">            return false; &#x2F;&#x2F; R is negative</span><br><span class="line"></span><br><span class="line">        if ((sig[rPos] &#x3D;&#x3D; 0) &amp;&amp; rLen &#x3D;&#x3D; 1)</span><br><span class="line">            return false; &#x2F;&#x2F; R is zero</span><br><span class="line"></span><br><span class="line">        if ((sig[rPos] &#x3D;&#x3D; 0) &amp;&amp; ((sig[rPos + 1] &amp; 0x80) &#x3D;&#x3D; 0))</span><br><span class="line">            return false; &#x2F;&#x2F; R is padded</span><br><span class="line"></span><br><span class="line">        if ((sig[sPos] &amp; 0x80) !&#x3D; 0)</span><br><span class="line">            return false; &#x2F;&#x2F; S is negative</span><br><span class="line"></span><br><span class="line">        if ((sig[sPos] &#x3D;&#x3D; 0) &amp;&amp; sLen &#x3D;&#x3D; 1)</span><br><span class="line">            return false; &#x2F;&#x2F; S is zero</span><br><span class="line"></span><br><span class="line">        if ((sig[sPos] &#x3D;&#x3D; 0) &amp;&amp; ((sig[sPos + 1] &amp; 0x80) &#x3D;&#x3D; 0))</span><br><span class="line">            return false; &#x2F;&#x2F; S is padded</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        byte[] rBytes &#x3D; new byte[rLen];</span><br><span class="line">        byte[] sBytes &#x3D; new byte[sLen];</span><br><span class="line"></span><br><span class="line">        System.arraycopy(sig, rPos, rBytes, 0, rLen);</span><br><span class="line">        System.arraycopy(sig, sPos, sBytes, 0, sLen);</span><br><span class="line"></span><br><span class="line">        BigInteger r &#x3D; new BigInteger(1, rBytes), s &#x3D; new BigInteger(1, sBytes);</span><br><span class="line"></span><br><span class="line">        BigInteger order &#x3D; SECP256K1.order();</span><br><span class="line"></span><br><span class="line">        if (r.compareTo(order) !&#x3D; -1 || s.compareTo(order) !&#x3D; -1) &#123;</span><br><span class="line">            return false; &#x2F;&#x2F; R or S greater than modulus</span><br><span class="line">        &#125;</span><br><span class="line">        if (strict) &#123;</span><br><span class="line">            return order.subtract(s).compareTo(s) !&#x3D; -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * DER is an international standard for serializing data structures which is widely used in cryptography.</span><br><span class="line">     * It&#39;s somewhat like protocol buffers but less convenient. This method returns a standard DER encoding</span><br><span class="line">     * of the signature, as recognized by OpenSSL and other libraries.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public byte[] encodeToDER() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            return derByteStream().toByteArray();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);  &#x2F;&#x2F; Cannot happen.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static ECDSASignature decodeFromDER(byte[] bytes) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            ASN1InputStream decoder &#x3D; new ASN1InputStream(bytes);</span><br><span class="line">            DLSequence seq &#x3D; (DLSequence) decoder.readObject();</span><br><span class="line">            ASN1Integer r, s;</span><br><span class="line">            try &#123;</span><br><span class="line">                r &#x3D; (ASN1Integer) seq.getObjectAt(0);</span><br><span class="line">                s &#x3D; (ASN1Integer) seq.getObjectAt(1);</span><br><span class="line">            &#125; catch (ClassCastException e) &#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125; finally &#123;</span><br><span class="line">                decoder.close();</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F; OpenSSL deviates from the DER spec by interpreting these values as unsigned, though they should not be</span><br><span class="line">            &#x2F;&#x2F; Thus, we always use the positive versions. See: http:&#x2F;&#x2F;r6.ca&#x2F;blog&#x2F;20111119T211504Z.html</span><br><span class="line">            return new ECDSASignature(r.getPositiveValue(), s.getPositiveValue());</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected ByteArrayOutputStream derByteStream() throws IOException &#123;</span><br><span class="line">        &#x2F;&#x2F; Usually 70-72 bytes.</span><br><span class="line">        ByteArrayOutputStream bos &#x3D; new ByteArrayOutputStream(72);</span><br><span class="line">        DERSequenceGenerator seq &#x3D; new DERSequenceGenerator(bos);</span><br><span class="line">        seq.addObject(new ASN1Integer(r));</span><br><span class="line">        seq.addObject(new ASN1Integer(s));</span><br><span class="line">        seq.close();</span><br><span class="line">        return bos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="ECDSASigner工具类"><a href="#ECDSASigner工具类" class="headerlink" title="ECDSASigner工具类"></a>ECDSASigner工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line">import android.util.Log;</span><br><span class="line"></span><br><span class="line">import java.math.BigInteger;</span><br><span class="line">import java.security.SecureRandom;</span><br><span class="line"></span><br><span class="line">import org.bouncycastle.crypto.CipherParameters;</span><br><span class="line">import org.bouncycastle.crypto.DSA;</span><br><span class="line">import org.bouncycastle.crypto.params.ECDomainParameters;</span><br><span class="line">import org.bouncycastle.crypto.params.ECKeyParameters;</span><br><span class="line">import org.bouncycastle.crypto.params.ECPrivateKeyParameters;</span><br><span class="line">import org.bouncycastle.crypto.params.ECPublicKeyParameters;</span><br><span class="line">import org.bouncycastle.crypto.params.ParametersWithRandom;</span><br><span class="line">import org.bouncycastle.crypto.signers.DSAKCalculator;</span><br><span class="line">import org.bouncycastle.crypto.signers.RandomDSAKCalculator;</span><br><span class="line">import org.bouncycastle.math.ec.ECAlgorithms;</span><br><span class="line">import org.bouncycastle.math.ec.ECConstants;</span><br><span class="line">import org.bouncycastle.math.ec.ECCurve;</span><br><span class="line">import org.bouncycastle.math.ec.ECFieldElement;</span><br><span class="line">import org.bouncycastle.math.ec.ECMultiplier;</span><br><span class="line">import org.bouncycastle.math.ec.ECPoint;</span><br><span class="line">import org.bouncycastle.math.ec.FixedPointCombMultiplier;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * EC-DSA as described in X9.62</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class ECDSASigner</span><br><span class="line">        implements ECConstants, DSA</span><br><span class="line">&#123;</span><br><span class="line">    private final DSAKCalculator kCalculator;</span><br><span class="line"></span><br><span class="line">    private ECKeyParameters key;</span><br><span class="line">    private SecureRandom    random;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * Default configuration, random K values.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public ECDSASigner()</span><br><span class="line">    &#123;</span><br><span class="line">        this.kCalculator &#x3D; new RandomDSAKCalculator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * Configuration with an alternate, possibly deterministic calculator of K.</span><br><span class="line">     *</span><br><span class="line">     * @param kCalculator a K value calculator.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public ECDSASigner(DSAKCalculator kCalculator)</span><br><span class="line">    &#123;</span><br><span class="line">        this.kCalculator &#x3D; kCalculator;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void init(</span><br><span class="line">            boolean                 forSigning,</span><br><span class="line">            CipherParameters        param)</span><br><span class="line">    &#123;</span><br><span class="line">        SecureRandom providedRandom &#x3D; null;</span><br><span class="line"></span><br><span class="line">        if (forSigning)</span><br><span class="line">        &#123;</span><br><span class="line">            if (param instanceof ParametersWithRandom)</span><br><span class="line">            &#123;</span><br><span class="line">                ParametersWithRandom rParam &#x3D; (ParametersWithRandom)param;</span><br><span class="line"></span><br><span class="line">                this.key &#x3D; (ECPrivateKeyParameters)rParam.getParameters();</span><br><span class="line">                providedRandom &#x3D; rParam.getRandom();</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                this.key &#x3D; (ECPrivateKeyParameters)param;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            this.key &#x3D; (ECPublicKeyParameters)param;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        this.random &#x3D; initSecureRandom(forSigning &amp;&amp; !kCalculator.isDeterministic(), providedRandom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 5.3 pg 28</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * generate a signature for the given message using the key we were</span><br><span class="line">     * initialised with. For conventional DSA the message should be a SHA-1</span><br><span class="line">     * hash of the message of interest.</span><br><span class="line">     *</span><br><span class="line">     * @param message the message that will be verified later.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public BigInteger[] generateSignature(</span><br><span class="line">            byte[] message)</span><br><span class="line">    &#123;</span><br><span class="line">        ECDomainParameters ec &#x3D; key.getParameters();</span><br><span class="line">        BigInteger n &#x3D; ec.getN();</span><br><span class="line">        BigInteger e &#x3D; calculateE(n, message);</span><br><span class="line">        BigInteger d &#x3D; ((ECPrivateKeyParameters)key).getD();</span><br><span class="line"></span><br><span class="line">        if (kCalculator.isDeterministic())</span><br><span class="line">        &#123;</span><br><span class="line">            kCalculator.init(n, d, message);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            kCalculator.init(n, random);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger r, s;</span><br><span class="line"></span><br><span class="line">        ECMultiplier basePointMultiplier &#x3D; createBasePointMultiplier();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 5.3.2</span><br><span class="line">        do &#x2F;&#x2F; generate s</span><br><span class="line">        &#123;</span><br><span class="line">            BigInteger k;</span><br><span class="line">            do &#x2F;&#x2F; generate r</span><br><span class="line">            &#123;</span><br><span class="line">                k &#x3D; kCalculator.nextK();</span><br><span class="line"></span><br><span class="line">                ECPoint p &#x3D; basePointMultiplier.multiply(ec.getG(), k).normalize();</span><br><span class="line"></span><br><span class="line">                &#x2F;&#x2F; 5.3.3</span><br><span class="line">                r &#x3D; p.getAffineXCoord().toBigInteger().mod(n);</span><br><span class="line">            &#125;</span><br><span class="line">            while (r.equals(ZERO));</span><br><span class="line"></span><br><span class="line">            s &#x3D; k.modInverse(n).multiply(e.add(d.multiply(r))).mod(n);</span><br><span class="line">            Log.d(&quot;k&quot;,k.toString());</span><br><span class="line">            Log.d(&quot;k--16&quot;,new BigInteger(k.toString(),10).toString(16));</span><br><span class="line">        &#125;</span><br><span class="line">        while (s.equals(ZERO));</span><br><span class="line">        Log.d(&quot;n&quot;,n.toString());</span><br><span class="line">        Log.d(&quot;e&quot;,e.toString());</span><br><span class="line">        Log.d(&quot;d&quot;,d.toString());</span><br><span class="line">        Log.d(&quot;r&quot;,r.toString());</span><br><span class="line">        Log.d(&quot;s&quot;,s.toString());</span><br><span class="line">        Log.d(&quot;n--16&quot;,new BigInteger(n.toString(),10).toString(16));</span><br><span class="line">        Log.d(&quot;e--16&quot;,new BigInteger(e.toString(),10).toString(16));</span><br><span class="line">        Log.d(&quot;d--16&quot;,new BigInteger(d.toString(),10).toString(16));</span><br><span class="line">        Log.d(&quot;r--16&quot;,new BigInteger(r.toString(),10).toString(16));</span><br><span class="line">        Log.d(&quot;s--16&quot;,new BigInteger(s.toString(),10).toString(16));</span><br><span class="line">        s &#x3D; new BigInteger(&quot;E468A936836180EAB2360CEEB35657D48BDC227B0F954CAA9507A9BAB153C07B&quot;,16);</span><br><span class="line">        return new BigInteger[]&#123; r, s &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 5.4 pg 29</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * return true if the value r and s represent a DSA signature for</span><br><span class="line">     * the passed in message (for standard DSA the message should be</span><br><span class="line">     * a SHA-1 hash of the real message to be verified).</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public boolean verifySignature(</span><br><span class="line">            byte[]      message,</span><br><span class="line">            BigInteger  r,</span><br><span class="line">            BigInteger  s)</span><br><span class="line">    &#123;</span><br><span class="line">        ECDomainParameters ec &#x3D; key.getParameters();</span><br><span class="line">        BigInteger n &#x3D; ec.getN();</span><br><span class="line">        BigInteger e &#x3D; calculateE(n, message);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; r in the range [1,n-1]</span><br><span class="line">        if (r.compareTo(ONE) &lt; 0 || r.compareTo(n) &gt;&#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; s in the range [1,n-1]</span><br><span class="line">        if (s.compareTo(ONE) &lt; 0 || s.compareTo(n) &gt;&#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger c &#x3D; s.modInverse(n);</span><br><span class="line"></span><br><span class="line">        BigInteger u1 &#x3D; e.multiply(c).mod(n);</span><br><span class="line">        BigInteger u2 &#x3D; r.multiply(c).mod(n);</span><br><span class="line"></span><br><span class="line">        ECPoint G &#x3D; ec.getG();</span><br><span class="line">        ECPoint Q &#x3D; ((ECPublicKeyParameters)key).getQ();</span><br><span class="line"></span><br><span class="line">        ECPoint point &#x3D; ECAlgorithms.sumOfTwoMultiplies(G, u1, Q, u2);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; components must be bogus.</span><br><span class="line">        if (point.isInfinity())</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;*</span><br><span class="line">         * If possible, avoid normalizing the point (to save a modular inversion in the curve field).</span><br><span class="line">         *</span><br><span class="line">         * There are ~cofactor elements of the curve field that reduce (modulo the group order) to &#39;r&#39;.</span><br><span class="line">         * If the cofactor is known and small, we generate those possible field values and project each</span><br><span class="line">         * of them to the same &quot;denominator&quot; (depending on the particular projective coordinates in use)</span><br><span class="line">         * as the calculated point.X. If any of the projected values matches point.X, then we have:</span><br><span class="line">         *     (point.X &#x2F; Denominator mod p) mod n &#x3D;&#x3D; r</span><br><span class="line">         * as required, and verification succeeds.</span><br><span class="line">         *</span><br><span class="line">         * Based on an original idea by Gregory Maxwell (https:&#x2F;&#x2F;github.com&#x2F;gmaxwell), as implemented in</span><br><span class="line">         * the libsecp256k1 project (https:&#x2F;&#x2F;github.com&#x2F;bitcoin&#x2F;secp256k1).</span><br><span class="line">         *&#x2F;</span><br><span class="line">        ECCurve curve &#x3D; point.getCurve();</span><br><span class="line">        if (curve !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            BigInteger cofactor &#x3D; curve.getCofactor();</span><br><span class="line">            if (cofactor !&#x3D; null &amp;&amp; cofactor.compareTo(EIGHT) &lt;&#x3D; 0)</span><br><span class="line">            &#123;</span><br><span class="line">                ECFieldElement D &#x3D; getDenominator(curve.getCoordinateSystem(), point);</span><br><span class="line">                if (D !&#x3D; null &amp;&amp; !D.isZero())</span><br><span class="line">                &#123;</span><br><span class="line">                    ECFieldElement X &#x3D; point.getXCoord();</span><br><span class="line">                    while (curve.isValidFieldElement(r))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ECFieldElement R &#x3D; curve.fromBigInteger(r).multiply(D);</span><br><span class="line">                        if (R.equals(X))</span><br><span class="line">                        &#123;</span><br><span class="line">                            return true;</span><br><span class="line">                        &#125;</span><br><span class="line">                        r &#x3D; r.add(n);</span><br><span class="line">                    &#125;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger v &#x3D; point.normalize().getAffineXCoord().toBigInteger().mod(n);</span><br><span class="line">        return v.equals(r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected BigInteger calculateE(BigInteger n, byte[] message)</span><br><span class="line">    &#123;</span><br><span class="line">        int log2n &#x3D; n.bitLength();</span><br><span class="line">        int messageBitLength &#x3D; message.length * 8;</span><br><span class="line"></span><br><span class="line">        BigInteger e &#x3D; new BigInteger(1, message);</span><br><span class="line">        if (log2n &lt; messageBitLength)</span><br><span class="line">        &#123;</span><br><span class="line">            e &#x3D; e.shiftRight(messageBitLength - log2n);</span><br><span class="line">        &#125;</span><br><span class="line">        return e;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected ECMultiplier createBasePointMultiplier()</span><br><span class="line">    &#123;</span><br><span class="line">        return new FixedPointCombMultiplier();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected ECFieldElement getDenominator(int coordinateSystem, ECPoint p)</span><br><span class="line">    &#123;</span><br><span class="line">        switch (coordinateSystem)</span><br><span class="line">        &#123;</span><br><span class="line">            case ECCurve.COORD_HOMOGENEOUS:</span><br><span class="line">            case ECCurve.COORD_LAMBDA_PROJECTIVE:</span><br><span class="line">            case ECCurve.COORD_SKEWED:</span><br><span class="line">                return p.getZCoord(0);</span><br><span class="line">            case ECCurve.COORD_JACOBIAN:</span><br><span class="line">            case ECCurve.COORD_JACOBIAN_CHUDNOVSKY:</span><br><span class="line">            case ECCurve.COORD_JACOBIAN_MODIFIED:</span><br><span class="line">                return p.getZCoord(0).square();</span><br><span class="line">            default:</span><br><span class="line">                return null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected SecureRandom initSecureRandom(boolean needed, SecureRandom provided)</span><br><span class="line">    &#123;</span><br><span class="line">        return !needed ? null : (provided !&#x3D; null) ? provided : new SecureRandom();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="HashUtils工具类"><a href="#HashUtils工具类" class="headerlink" title="HashUtils工具类"></a>HashUtils工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line">import org.bouncycastle.crypto.digests.RIPEMD160Digest;</span><br><span class="line"></span><br><span class="line">import java.security.MessageDigest;</span><br><span class="line">import java.security.NoSuchAlgorithmException;</span><br><span class="line"></span><br><span class="line">public class HashUtils &#123;</span><br><span class="line">    private static final MessageDigest digest;</span><br><span class="line">    static &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            digest &#x3D; MessageDigest.getInstance(&quot;SHA-256&quot;);</span><br><span class="line">        &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);  &#x2F;&#x2F; Can&#39;t happen.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * See &#123;@link HashUtils#doubleDigest(byte[], int, int)&#125;.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static byte[] doubleDigest(byte[] input) &#123;</span><br><span class="line">        return doubleDigest(input, 0, input.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * Calculates the SHA-256 hash of the given byte range, and then hashes the resulting hash again. This is</span><br><span class="line">     * standard procedure in Bitcoin. The resulting hash is in big endian form.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static byte[] doubleDigest(byte[] input, int offset, int length) &#123;</span><br><span class="line">        synchronized (digest) &#123;</span><br><span class="line">            digest.reset();</span><br><span class="line">            digest.update(input, offset, length);</span><br><span class="line">            byte[] first &#x3D; digest.digest();</span><br><span class="line">            return digest.digest(first);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static byte[] halfSha512(byte[] bytes) &#123;</span><br><span class="line">        return new Sha512(bytes).finish256();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static byte[] quarterSha512(byte[] bytes) &#123;</span><br><span class="line">        return new Sha512(bytes).finish128();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static byte[] sha512(byte[] bytes) &#123;</span><br><span class="line">        return new Sha512(bytes).finish();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static byte[] SHA256_RIPEMD160(byte[] input) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            byte[] sha256 &#x3D; MessageDigest.getInstance(&quot;SHA-256&quot;).digest(input);</span><br><span class="line">            RIPEMD160Digest digest &#x3D; new RIPEMD160Digest();</span><br><span class="line">            digest.update(sha256, 0, sha256.length);</span><br><span class="line">            byte[] out &#x3D; new byte[20];</span><br><span class="line">            digest.doFinal(out, 0);</span><br><span class="line">            return out;</span><br><span class="line">        &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);  &#x2F;&#x2F; Cannot happen.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="K256KeyPair工具类"><a href="#K256KeyPair工具类" class="headerlink" title="K256KeyPair工具类"></a>K256KeyPair工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line">import org.bouncycastle.crypto.digests.SHA256Digest;</span><br><span class="line">import org.bouncycastle.crypto.params.ECPrivateKeyParameters;</span><br><span class="line">import com.wallet.hot.ripple.ECDSASigner;</span><br><span class="line">import org.bouncycastle.crypto.signers.HMacDSAKCalculator;</span><br><span class="line"></span><br><span class="line">import java.math.BigInteger;</span><br><span class="line"></span><br><span class="line">public abstract class K256KeyPair &#123;</span><br><span class="line"></span><br><span class="line">    public static byte[] signHash(byte[] bytes, BigInteger secret) &#123;</span><br><span class="line">        ECDSASignature sig &#x3D; createECDSASignature(bytes, secret);</span><br><span class="line">        byte[] der &#x3D; sig.encodeToDER();</span><br><span class="line">        if (!ECDSASignature.isStrictlyCanonical(der)) &#123;</span><br><span class="line">            throw new IllegalStateException(&quot;Signature is not strictly canonical&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return der;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static ECDSASignature createECDSASignature(byte[] hash, BigInteger secret) &#123;</span><br><span class="line">        ECDSASigner signer &#x3D; new ECDSASigner(new HMacDSAKCalculator(new SHA256Digest()));</span><br><span class="line">        ECPrivateKeyParameters privKey &#x3D; new ECPrivateKeyParameters(secret, SECP256K1.params());</span><br><span class="line">        signer.init(true, privKey);</span><br><span class="line">        BigInteger[] sigs &#x3D; signer.generateSignature(hash);</span><br><span class="line">        BigInteger r &#x3D; sigs[0], s &#x3D; sigs[1];</span><br><span class="line"></span><br><span class="line">        BigInteger otherS &#x3D; SECP256K1.order().subtract(s);</span><br><span class="line">        if (s.compareTo(otherS) &#x3D;&#x3D; 1) &#123;</span><br><span class="line">            s &#x3D; otherS;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return new ECDSASignature(r, s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="SECP256K1工具类"><a href="#SECP256K1工具类" class="headerlink" title="SECP256K1工具类"></a>SECP256K1工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import org.bouncycastle.asn1.sec.SECNamedCurves;</span><br><span class="line">import org.bouncycastle.asn1.x9.X9ECParameters;</span><br><span class="line">import org.bouncycastle.crypto.params.ECDomainParameters;</span><br><span class="line">import org.bouncycastle.math.ec.ECCurve;</span><br><span class="line">import org.bouncycastle.math.ec.ECPoint;</span><br><span class="line"></span><br><span class="line">import java.math.BigInteger;</span><br><span class="line"></span><br><span class="line">public class SECP256K1 &#123;</span><br><span class="line">    private static final ECDomainParameters ecParams;</span><br><span class="line">    private static final X9ECParameters params;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line"></span><br><span class="line">        params &#x3D; SECNamedCurves.getByName(&quot;secp256k1&quot;);</span><br><span class="line">        ecParams &#x3D; new ECDomainParameters(params.getCurve(), params.getG(), params.getN(), params.getH());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static ECDomainParameters params() &#123;</span><br><span class="line">        return ecParams;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static BigInteger order() &#123;</span><br><span class="line">        return ecParams.getN();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static ECCurve curve() &#123;</span><br><span class="line">        return ecParams.getCurve();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static ECPoint basePoint() &#123;</span><br><span class="line">        return ecParams.getG();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static byte[] basePointMultipliedBy(BigInteger secret) &#123;</span><br><span class="line">        return basePoint().multiply(secret).getEncoded(true);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Sha512工具类"><a href="#Sha512工具类" class="headerlink" title="Sha512工具类"></a>Sha512工具类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">package com.wallet.hot.ripple;</span><br><span class="line"></span><br><span class="line">import java.security.MessageDigest;</span><br><span class="line">import java.security.NoSuchAlgorithmException;</span><br><span class="line">import java.security.NoSuchProviderException;</span><br><span class="line"></span><br><span class="line">public class Sha512 &#123;</span><br><span class="line">    MessageDigest messageDigest;</span><br><span class="line"></span><br><span class="line">    public Sha512() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            messageDigest &#x3D; MessageDigest.getInstance(&quot;SHA-512&quot;, &quot;BC&quot;);</span><br><span class="line">        &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);</span><br><span class="line">        &#125; catch (NoSuchProviderException e) &#123;</span><br><span class="line">            throw new RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Sha512(byte[] start) &#123;</span><br><span class="line">        this();</span><br><span class="line">        add(start);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Sha512 add(byte[] bytes) &#123;</span><br><span class="line">        messageDigest.update(bytes);</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Sha512 addU32(int i) &#123;</span><br><span class="line">        messageDigest.update((byte) ((i &gt;&gt;&gt; 24) &amp; 0xFF));</span><br><span class="line">        messageDigest.update((byte) ((i &gt;&gt;&gt; 16) &amp; 0xFF));</span><br><span class="line">        messageDigest.update((byte) ((i &gt;&gt;&gt; 8)  &amp; 0xFF));</span><br><span class="line">        messageDigest.update((byte) ((i)        &amp; 0xFF));</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private byte[] finishTaking(int size) &#123;</span><br><span class="line">        byte[] hash &#x3D; new byte[size];</span><br><span class="line">        System.arraycopy(messageDigest.digest(), 0, hash, 0, size);</span><br><span class="line">        return hash;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public byte[] finish128() &#123;</span><br><span class="line">        return finishTaking(16);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public byte[] finish256() &#123;</span><br><span class="line">        return finishTaking(32);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public byte[] finish() &#123;</span><br><span class="line">        return messageDigest.digest();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+        
+
+      
+    </div>
+
+
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div class="read-over">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/archives/7937af06/">基于Java的Android区块链钱包开发(XRP篇)</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 小眼哥 的个人博客">小眼哥</a></p>
+  <p><span>发布时间:</span>2020年03月13日 - 13:52:00</p>
+  <p><span>最后更新:</span>2020年12月22日 - 16:00:08</p>
+  <p><span>原始链接:</span><a href="/archives/7937af06/" title="基于Java的Android区块链钱包开发(XRP篇)">https://xyange.xyz/archives/7937af06/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://xyange.xyz/archives/7937af06/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+    });
+    });
+</script>
+
+
+          
+    </div>
+
+    
+      <div>
+        <div class="share_reward">
+  <div>坚持原创技术分享，感谢您的支持和鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小眼哥 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="小眼哥 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/weixin.jpg" alt="小眼哥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注公众号，一起探索新生活。</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+<!-- 相关文章推荐 -->
+     
+          
+
+  <div class="popular-posts-header">
+    <i class="fa fa-graduation-cap"></i>
+    相关文章
+  </div>
+
+ <details>
+   <summary>点击查看</summary>
+     <ul class="popular-posts">
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="/archives/f9f76d56/" rel="bookmark">基于Java的Android区块链钱包开发(ETH篇)</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="/archives/4b8062c9/" rel="bookmark">基于Java的Android区块链钱包开发(BTC篇)</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="/archives/9d612c0/" rel="bookmark">区块链开发之生成助记词</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="/archives/6bcd271c/" rel="bookmark">通过命令行生成Android数字证书</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="/archives/32c89b04/" rel="bookmark">Android Studio编译报错总结</a></div>
+         
+       </li>
+     
+     </ul>
+ </details>
+
+
+
+     
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"> <i class="fa fa-tag"></i> Android</a>
+          
+            <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"> <i class="fa fa-tag"></i> 区块链</a>
+          
+            <a href="/tags/XRP/" rel="tag"> <i class="fa fa-tag"></i> XRP</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div style="color:rgba(0,0,0,.75);font-size:13px;letter-spacing:4px;margin-bottom:5px;text-align:center">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/f9f76d56/" rel="next" title="基于Java的Android区块链钱包开发(ETH篇)">
+                <i class="fa fa-chevron-left"></i> 基于Java的Android区块链钱包开发(ETH篇)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/32c89b04/" rel="prev" title="Android Studio编译报错总结">
+                Android Studio编译报错总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+         <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+
+
+      
+    </div>
+  </div>
+    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+    <script>
+    const btw = new BTWPlugin();
+    btw.init({
+        id: 'container-xy',
+        blogId: '20460-1597556454189-580',
+        name: '眼哥聊生活',
+        qrcode: 'https://xyange.xyz/images/weixin.jpg',
+        keyword: 'struggle',
+    });
+    </script>
+  </div>
+
+
+            </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="小眼哥" />
+              </a>
+            
+              <p class="site-author-name" itemprop="name">小眼哥</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+              <!-- 为Hexo Next主题添加哈林摇特效  -->
+              <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href="javascript:void(0)" onclick="javascript:(    /*     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>     *     * Licensed under the Apache License, Version 2.0 (the 'License');     * you may not use this file except in compliance with the License.     * You may obtain a copy of the License at     *     *      http://www.apache.org/licenses/LICENSE-2.0     *     * Unless required by applicable law or agreed to in writing, software     * distributed under the License is distributed on an 'AS IS' BASIS,     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.     * See the License for the specific language governing permissions and     * limitations under the License.     */    function go() {        function c() {        var e = document.createElement('link');        e.setAttribute('type', 'text/css');        e.setAttribute('rel', 'stylesheet');        e.setAttribute('href', f);        e.setAttribute('class', l);        document.body.appendChild(e)    }     function h() {        var e = document.getElementsByClassName(l);        for (var t = 0; t < e.length; t++) {            document.body.removeChild(e[t])        }    }     function p() {        var e = document.createElement('div');        e.setAttribute('class', a);        document.body.appendChild(e);        setTimeout(function() {            document.body.removeChild(e)        }, 100)    }     function d(e) {        return {            height : e.offsetHeight,            width : e.offsetWidth        }    }     function v(i) {        var s = d(i);        return s.height > e &amp;&amp; s.height < n &amp;&amp; s.width > t &amp;&amp; s.width < r    }     function m(e) {        var t = e;        var n = 0;        while (!!t) {            n += t.offsetTop;            t = t.offsetParent        }        return n    }     function g() {        var e = document.documentElement;        if (!!window.innerWidth) {            return window.innerHeight        } else if (e &amp;&amp; !isNaN(e.clientHeight)) {            return e.clientHeight        }        return 0    }     function y() {        if (window.pageYOffset) {            return window.pageYOffset        }        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)    }     function E(e) {        var t = m(e);        return t >= w &amp;&amp; t <= b + w    }     var songs = [                'http://s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3', 'http://www.ytmp3.cn/down/57563.mp3'  ];    function S() {        var e = document.getElementById('audio_element_id');        if(e != null){            var index = parseInt(e.getAttribute('curSongIndex'));            if(index > songs.length - 2) {                index = 0;            } else {                index++;            }            e.setAttribute('curSongIndex', index);            N();        }        e.src = i;        e.play()    }     function x(e) {        e.className += ' ' + s + ' ' + o    }     function T(e) {        e.className += ' ' + s + ' ' + u[Math.floor(Math.random() * u.length)]    }     function N() {        var e = document.getElementsByClassName(s);        var t = new RegExp('\\b' + s + '\\b');        for (var n = 0; n < e.length; ) {            e[n].className = e[n].className.replace(t, '')        }    }    function initAudioEle() {        var e = document.getElementById('audio_element_id');        if(e === null){            e = document.createElement('audio');            e.setAttribute('class', l);            e.setAttribute('curSongIndex', 0);            e.id = 'audio_element_id';            e.loop = false;            e.bgcolor = 0;            e.addEventListener('canplay', function() {            setTimeout(function() {                x(k)            }, 500);            setTimeout(function() {                N();                p();                for (var e = 0; e < O.length; e++) {                    T(O[e])                }            }, 15500)        }, true);        e.addEventListener('ended', function() {            N();            h();            go();        }, true);        e.innerHTML = ' <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>';        document.body.appendChild(e);        }    }        initAudioEle();    var e = 30;    var t = 30;    var n = 350;    var r = 350;    var curSongIndex = parseInt(document.getElementById('audio_element_id').getAttribute('curSongIndex'));    var i = songs[curSongIndex];        var s = 'mw-harlem_shake_me';    var o = 'im_first';    var u = ['im_drunk', 'im_baked', 'im_trippin', 'im_blown'];    var a = 'mw-strobe_light';    var f = 'https://rocko.xyz/css/harlem-shake-style.css';        var l = 'mw_added_css';    var b = g();    var w = y();    var C = document.getElementsByTagName('*');    var k = null;    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            if (E(A)) {                k = A;                break            }        }    }    if (A === null) {        console.warn('Could not find a node of the right size. Please try a different page.');        return    }    c();    S();    var O = [];    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            O.push(A)        }    }    })()">
+        <i class="fa fa-music"></i> High~
+</a>
+
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a rel="external nofollow" href="https://github.com/xyange" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a rel="external nofollow" href="mailto:tiffary123@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a rel="external nofollow" href="https://weibo.com/u/3737464245" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a rel="external nofollow" href="tencent://message/?uin=996809314&Site=&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a rel="external nofollow" href="/images/wechat_channel.jpg" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i></a>
+                  </span>
+                
+            </div>
+          
+
+            <!--
+            <div id="music163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1336790004&auto=1&height=66"></iframe>
+            </div>
+            -->
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tool2.cn" title="兔二工具" rel="external nofollow" target="_blank">兔二工具</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <!--近期文章版块 began-->
+          
+              <div class="links-of-blogroll motion-element links-of-blogroll-block">
+                <div class="links-of-blogroll-title">
+                  <i class="fa fa-history fa-" aria-hidden="true"></i>
+                  近期文章
+                </div>
+                <ul class="links-of-blogroll-list">
+                  
+                  
+                    <li class='my-links-of-blogroll-li'>
+                      <a href="/archives/364a1c48/" title="互联网上那些防不胜防的搜索技巧" target="_blank">互联网上那些防不胜防的搜索技巧</a>
+                    </li>
+                  
+                    <li class='my-links-of-blogroll-li'>
+                      <a href="/archives/5ce8cd68/" title="Vue错误解决大全" target="_blank">Vue错误解决大全</a>
+                    </li>
+                  
+                    <li class='my-links-of-blogroll-li'>
+                      <a href="/archives/994c80f7/" title="Vue前端路由" target="_blank">Vue前端路由</a>
+                    </li>
+                  
+                    <li class='my-links-of-blogroll-li'>
+                      <a href="/archives/890370f2/" title="Vue前后端交互" target="_blank">Vue前后端交互</a>
+                    </li>
+                  
+                    <li class='my-links-of-blogroll-li'>
+                      <a href="/archives/189c89bd/" title="Vue组件化开发" target="_blank">Vue组件化开发</a>
+                    </li>
+                  
+                </ul>
+              </div>
+          
+          <!--近期文章版块 end-->
+
+          
+              <!-- canvas粒子时钟 -->
+              <!-- canvas粒子时钟 https://www.cnblogs.com/xiaohuochai/p/6368039.html
+  https://www.html5tricks.com/html5-canvas-dance-time.html
+ -->
+<div id="">
+  <canvas id="canvas" style="width:60%;">
+</div>
+<script>
+(function(){
+  var WINDOW_WIDTH = 820;
+  		var WINDOW_HEIGHT = 250;
+  		var RADIUS = 7; //球半径
+  		var NUMBER_GAP = 10; //数字之间的间隙
+  		var u=0.65; //碰撞能量损耗系数
+  		var context; //Canvas绘制上下文
+  		var balls = []; //存储彩色的小球
+  		const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"]; //彩色小球的颜色
+  		var currentNums = []; //屏幕显示的8个字符
+  		var digit =
+                  [
+                      [
+                          [0,0,1,1,1,0,0],
+                          [0,1,1,0,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,0,1,1,0],
+                          [0,0,1,1,1,0,0]
+                      ],//0
+                      [
+                          [0,0,0,1,1,0,0],
+                          [0,1,1,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [1,1,1,1,1,1,1]
+                      ],//1
+                      [
+                          [0,1,1,1,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,1,1,0,0,0],
+                          [0,1,1,0,0,0,0],
+                          [1,1,0,0,0,0,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,1,1,1,1,1]
+                      ],//2
+                      [
+                          [1,1,1,1,1,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,1,1,1,0,0],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,1,1,0]
+                      ],//3
+                      [
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,1,0],
+                          [0,0,1,1,1,1,0],
+                          [0,1,1,0,1,1,0],
+                          [1,1,0,0,1,1,0],
+                          [1,1,1,1,1,1,1],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,1,1]
+                      ],//4
+                      [
+                          [1,1,1,1,1,1,1],
+                          [1,1,0,0,0,0,0],
+                          [1,1,0,0,0,0,0],
+                          [1,1,1,1,1,1,0],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,1,1,0]
+                      ],//5
+                      [
+                          [0,0,0,0,1,1,0],
+                          [0,0,1,1,0,0,0],
+                          [0,1,1,0,0,0,0],
+                          [1,1,0,0,0,0,0],
+                          [1,1,0,1,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,1,1,0]
+                      ],//6
+                      [
+                          [1,1,1,1,1,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,0,1,1,0,0],
+                          [0,0,1,1,0,0,0],
+                          [0,0,1,1,0,0,0],
+                          [0,0,1,1,0,0,0],
+                          [0,0,1,1,0,0,0]
+                      ],//7
+                      [
+                          [0,1,1,1,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,1,1,0]
+                      ],//8
+                      [
+                          [0,1,1,1,1,1,0],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [1,1,0,0,0,1,1],
+                          [0,1,1,1,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,0,1,1],
+                          [0,0,0,0,1,1,0],
+                          [0,0,0,1,1,0,0],
+                          [0,1,1,0,0,0,0]
+                      ],//9
+                      [
+                          [0,0,0,0],
+                          [0,0,0,0],
+                          [0,1,1,0],
+                          [0,1,1,0],
+                          [0,0,0,0],
+                          [0,0,0,0],
+                          [0,1,1,0],
+                          [0,1,1,0],
+                          [0,0,0,0],
+                          [0,0,0,0]
+                      ]//:
+                  ];
+
+  		function drawDatetime(cxt){
+  			var nums = [];
+
+  			context.fillStyle="#005eac"
+  			var date = new Date();
+  			var offsetX = 70, offsetY = 30;
+  			var hours = date.getHours();
+  			var num1 = Math.floor(hours/10);
+  			var num2 = hours%10;
+  			nums.push({num: num1});
+  			nums.push({num: num2});
+  			nums.push({num: 10}); //冒号
+  			var minutes = date.getMinutes();
+  			var num1 = Math.floor(minutes/10);
+  			var num2 = minutes%10;
+  			nums.push({num: num1});
+  			nums.push({num: num2});
+  			nums.push({num: 10}); //冒号
+  			var seconds = date.getSeconds();
+  			var num1 = Math.floor(seconds/10);
+  			var num2 = seconds%10;
+  			nums.push({num: num1});
+  			nums.push({num: num2});
+
+  			for(var x = 0;x<nums.length;x++){
+  				nums[x].offsetX = offsetX;
+  				offsetX = drawSingleNumber(offsetX,offsetY, nums[x].num,cxt);
+  				//两个数字连一块，应该间隔一些距离
+  				if(x<nums.length-1){
+  					if((nums[x].num!=10) &&(nums[x+1].num!=10)){
+  						offsetX+=NUMBER_GAP;
+  					}
+  				}
+  			}
+
+  			//说明这是初始化
+  			if(currentNums.length ==0){
+  				currentNums = nums;
+  			}else{
+  				//进行比较
+  				for(var index = 0;index<currentNums.length;index++){
+  					if(currentNums[index].num!=nums[index].num){
+  						//不一样时，添加彩色小球
+  						addBalls(nums[index]);
+  						currentNums[index].num=nums[index].num;
+  					}
+  				}
+  			}
+  			renderBalls(cxt);
+  			updateBalls();
+
+  			return date;
+  		}
+
+  		function addBalls (item) {
+  			var num = item.num;
+  			var numMatrix = digit[num];
+  			for(var y = 0;y<numMatrix.length;y++){
+  				for(var x = 0;x<numMatrix[y].length;x++){
+  					if(numMatrix[y][x]==1){
+  						var ball={
+  							offsetX:item.offsetX+RADIUS+RADIUS*2*x,
+  							offsetY:30+RADIUS+RADIUS*2*y,
+  							color:colors[Math.floor(Math.random()*colors.length)],
+  							g:1.5+Math.random(),
+  							vx:Math.pow(-1, Math.ceil(Math.random()*10))*4+Math.random(),
+  							vy:-5
+  						}
+  						balls.push(ball);
+  					}
+  				}
+  			}
+  		}
+
+  		function renderBalls(cxt){
+  			for(var index = 0;index<balls.length;index++){
+  				cxt.beginPath();
+  				cxt.fillStyle=balls[index].color;
+  				cxt.arc(balls[index].offsetX, balls[index].offsetY, RADIUS, 0, 2*Math.PI);
+  				cxt.fill();
+  			}
+  		}
+
+  		function updateBalls () {
+  			var i =0;
+  			for(var index = 0;index<balls.length;index++){
+  				var ball = balls[index];
+  				ball.offsetX += ball.vx;
+  				ball.offsetY += ball.vy;
+  				ball.vy+=ball.g;
+  				if(ball.offsetY > (WINDOW_HEIGHT-RADIUS)){
+  					ball.offsetY= WINDOW_HEIGHT-RADIUS;
+  					ball.vy=-ball.vy*u;
+  				}
+  				if(ball.offsetX>RADIUS&&ball.offsetX<(WINDOW_WIDTH-RADIUS)){
+
+  					balls[i]=balls[index];
+  					i++;
+  				}
+  			}
+  			//去除出边界的球
+  			for(;i<balls.length;i++){
+  				balls.pop();
+  			}
+  		}
+  		function drawSingleNumber(offsetX, offsetY, num, cxt){
+  			var numMatrix = digit[num];
+  			for(var y = 0;y<numMatrix.length;y++){
+  				for(var x = 0;x<numMatrix[y].length;x++){
+  					if(numMatrix[y][x]==1){
+  						cxt.beginPath();
+  						cxt.arc(offsetX+RADIUS+RADIUS*2*x,offsetY+RADIUS+RADIUS*2*y,RADIUS,0,2*Math.PI);
+  						cxt.fill();
+  					}
+  				}
+  			}
+  			cxt.beginPath();
+  			offsetX += numMatrix[0].length*RADIUS*2;
+  			return offsetX;
+  		}
+
+  		var canvas = document.getElementById("canvas");
+  		canvas.width=WINDOW_WIDTH;
+  		canvas.height=WINDOW_HEIGHT;
+  		context = canvas.getContext("2d");
+
+  		//记录当前绘制的时刻
+  		var currentDate = new Date();
+
+  		setInterval(function(){
+  			//清空整个Canvas，重新绘制内容
+  			context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+  			drawDatetime(context);
+  		}, 50)
+})();
+</script>
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用的库"><span class="nav-number">2.</span> <span class="nav-text">使用的库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体代码如下"><span class="nav-number">3.</span> <span class="nav-text">具体代码如下</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成公私钥、地址"><span class="nav-number">3.1.</span> <span class="nav-text">生成公私钥、地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查余额-交易过程"><span class="nav-number">3.2.</span> <span class="nav-text">查余额 交易过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECDSASignature工具类"><span class="nav-number">3.3.</span> <span class="nav-text">ECDSASignature工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECDSASigner工具类"><span class="nav-number">3.4.</span> <span class="nav-text">ECDSASigner工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashUtils工具类"><span class="nav-number">3.5.</span> <span class="nav-text">HashUtils工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K256KeyPair工具类"><span class="nav-number">3.6.</span> <span class="nav-text">K256KeyPair工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SECP256K1工具类"><span class="nav-number">3.7.</span> <span class="nav-text">SECP256K1工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sha512工具类"><span class="nav-number">3.8.</span> <span class="nav-text">Sha512工具类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+       <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小眼哥</span>
+
+  
+</div>
+
+<!--
+
+
+  <div class="powered-by">由 <a rel="external nofollow" class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a rel="external nofollow" class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+-->
+<!-- 网站运行时间的设置 -->
+<div class="time" style="text-align:center">
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span> 
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/01/2020 13:14:52");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "我已在此等候你 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+        
+<div class="busuanzi-count">
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      我的第
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      位朋友
+    </span>
+
+  
+
+  
+    <span class="site-pv">
+      历经
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次回眸才与你相遇
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="100" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+  <!--<script src="//cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>-->
+  <!-- https://deserts.io/diy-a-comment-system/ -->
+  <script type="text/javascript">
+    new Valine({
+        lang: 'zh-cn',
+        admin_email: '996809314@qq.com', //博主邮箱
+        el: '#comments' ,
+        appId: 'EgCysbfqeB2f7Hk3X9cJHOhq-gzGzoHsz',
+        appKey: 'J2NfXUJMCzqLuofQYDbURaEi',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+        placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！',
+  });
+
+  <!--点击邮件中的链接跳转至相应评论-->
+  if(window.location.hash){
+      var checkExist = setInterval(function() {
+         if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+         }
+      }, 100);
+   }
+
+  </script>
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 23932,
+    el: 'wpac-rating',
+    color: 'ff9800'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- Tidio 在线联系功能、鼠标点击特效、页面反馈...-->
+  
+
+
+  
+    <script src="/js/cursor/love.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/src/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+<!-- 旋转魔方 -->
+
+   
+      <style>
+  /*最外层容器样式*/
+  .wrap {
+    width: 0px;
+    height: 0px;
+    /*margin: 80px;*/
+    /*position: relative;*/
+    position: fixed;
+    bottom: 120px;
+    right: 80px;
+    z-index: 999;
+  }
+
+  /*包裹所有容器样式*/
+  .cube {
+    width: 0px;
+    height: 0px;
+    margin: 0 auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(-80deg);
+    animation: rotate linear 10s infinite;
+  }
+
+  @-webkit-keyframes rotate {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+  .cube div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    transition: all .4s;
+  }
+
+  /*定义所有图片样式*/
+  .pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cube .out_front {
+    transform: rotateY(0deg) translateZ(25px);
+  }
+
+  .cube .out_back {
+    transform: translateZ(-25px) rotateY(180deg);
+  }
+
+  .cube .out_left {
+    transform: rotateY(-90deg) translateZ(25px);
+  }
+
+  .cube .out_right {
+    transform: rotateY(90deg) translateZ(25px);
+  }
+
+  .cube .out_top {
+    transform: rotateX(90deg) translateZ(25px);
+  }
+
+  .cube .out_bottom {
+    transform: rotateX(-90deg) translateZ(25px);
+  }
+
+  /*定义小正方体样式*/
+  .cube span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  .cube .in_pic {
+    width: 25px;
+    height:25px;
+  }
+
+  .cube .in_front {
+    transform: rotateY(0deg) translateZ(12px);
+  }
+
+  .cube .in_back {
+    transform: translateZ(-12px) rotateY(180deg);
+  }
+
+  .cube .in_left {
+    transform: rotateY(-90deg) translateZ(12px);
+  }
+
+  .cube .in_right {
+    transform: rotateY(90deg) translateZ(12px);
+  }
+
+  .cube .in_top {
+    transform: rotateX(90deg) translateZ(12px);
+  }
+
+  .cube .in_bottom {
+    transform: rotateX(-90deg) translateZ(12px);
+  }
+
+  /*鼠标移入后样式*/
+  .cube:hover .out_front {
+    transform: rotateY(0deg) translateZ(50px);
+  }
+
+  .cube:hover .out_back {
+    transform: translateZ(-50px) rotateY(180deg);
+  }
+
+  .cube:hover .out_left {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+
+  .cube:hover .out_right {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+
+  .cube:hover .out_top {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+
+  .cube:hover .out_bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+</style>
+
+<div class="wrap">
+
+    <!--包裹所有元素的容器-->
+    <div class="cube">
+        <!--前面图片 -->
+        <div class="out_front">
+          <a onclick="back2top()">
+              <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+        <!--后面图片 -->
+        <div class="out_back">
+            <a onclick="back2top()">
+               <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+        <!--左面图片 -->
+        <div class="out_left">
+            <a onclick="back2top()">
+               <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+        <!--右面图片 -->
+        <div class="out_right">
+            <a onclick="back2top()">
+                 <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+        <!--上面图片 -->
+        <div class="out_top">
+            <a onclick="back2top()">
+                 <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+        <!--下面图片 -->
+        <div class="out_bottom">
+            <a onclick="back2top()">
+                 <img src="/images/avatar.jpg" class="pic" />
+            </a>
+        </div>
+
+        <!--小正方体 -->
+        <span class="in_front">
+            <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+        <span class="in_back">
+             <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+        <span class="in_left">
+            <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+        <span class="in_right">
+            <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+        <span class="in_top">
+            <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+        <span class="in_bottom">
+            <img src="https://s2.ax1x.com/2019/10/14/KptCPf.th.jpg" class="in_pic" />
+        </span>
+    </div>
+
+</div>
+
+<script>
+  function back2top(){
+    $('html, body').animate({scrollTop: 0}, 500);
+  }
+</script>
+   
+
+
+  <!-- 看板娘 -->
+  
+      <script src="https://xyange.github.io/live2d-widget/autoload.js"></script>
+  
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+  <!--share.js-->
+  <link rel="stylesheet" href="/sharejs/css/share.min.css">
+  <script src="/sharejs/js/social-share.min.js"></script>
+
+  <!-- 模仿知乎卡片样式链接、崩溃欺骗特效 -->
+  <script type="text/javascript" src="/js/src/linkcard.js"></script>
+
+  <!--崩溃欺骗 放在js文件最后-->
+  <!--
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  -->
+
+
+</body>
+</html>
