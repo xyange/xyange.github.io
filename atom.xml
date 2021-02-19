@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xyange.xyz/"/>
-  <updated>2021-02-19T08:01:36.331Z</updated>
+  <updated>2021-02-19T08:13:59.752Z</updated>
   <id>https://xyange.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人月神话心得</title>
+    <link href="https://xyange.xyz/archives/59265047/"/>
+    <id>https://xyange.xyz/archives/59265047/</id>
+    <published>2021-02-19T08:08:00.000Z</published>
+    <updated>2021-02-19T08:13:59.752Z</updated>
+    
+    <summary type="html">
+    
+      软工经典书籍强烈推荐。
+    
+    </summary>
+    
+    
+      <category term="项目管理" scheme="https://xyange.xyz/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="项目管理" scheme="https://xyange.xyz/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="软件方法" scheme="https://xyange.xyz/tags/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Java优秀开源项目汇总（个人心得）</title>
@@ -468,27 +491,6 @@
       <category term="SM" scheme="https://xyange.xyz/tags/SM/"/>
     
       <category term="静态图床" scheme="https://xyange.xyz/tags/%E9%9D%99%E6%80%81%E5%9B%BE%E5%BA%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo写博客和Hexo Admin管理</title>
-    <link href="https://xyange.xyz/archives/cd5ebc21/"/>
-    <id>https://xyange.xyz/archives/cd5ebc21/</id>
-    <published>2020-03-07T02:49:00.000Z</published>
-    <updated>2020-12-22T08:00:08.786Z</updated>
-    
-    <summary type="html">
-    
-      Hexo写博客和Hexo Admin管理。
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://xyange.xyz/categories/Hexo/"/>
-    
-    
-      <category term="hexo admin" scheme="https://xyange.xyz/tags/hexo-admin/"/>
     
   </entry>
   
