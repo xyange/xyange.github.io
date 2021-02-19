@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>互联网上那些防不胜防的搜索技巧</title>
-    <url>/archives/364a1c48/</url>
-    <content><![CDATA[<h2 id="1-一张照片查出你的拍摄地点"><a href="#1-一张照片查出你的拍摄地点" class="headerlink" title="1. 一张照片查出你的拍摄地点"></a>1. 一张照片查出你的拍摄地点</h2><p>随着智能手机的普及，现在人们大部分使用手机进行拍照，而大多数相机已经默认开启地理位置，如下图：<br><img src="https://i.loli.net/2020/11/17/4G2pVjHgrJ1PCyh.png" alt="1605577719_1_.jpg"><br>在开启了这种功能的情况下拍摄的照片会自动存有你所拍照地点的经纬度信息：<br><img src="https://i.loli.net/2020/11/17/XIGFmSZWCQqvAut.png" alt="1605577693_1_.png"><br>有了经纬度信息，我们可以在 MagicExif 软件里查询到照片拍摄地的具体地址（精确到门牌号的那种地步！！！）<br><img src="https://i.loli.net/2020/11/17/JgZinDNIPfhpeLV.png" alt="1605577888_1_.jpg"></p>
-<h2 id="2-给你打个语音通话获取你的-IP-地址"><a href="#2-给你打个语音通话获取你的-IP-地址" class="headerlink" title="2. 给你打个语音通话获取你的 IP 地址"></a>2. 给你打个语音通话获取你的 IP 地址</h2><p>我们在 QQ 聊天时都是通过数据进行传输，那么使用一个抓包工具，只要数据传输到对方并且对方在线，我们就可以获取到对方的 IP 信息：<br><img src="https://i.loli.net/2020/11/17/5iMaFfp1OsSHlcm.png" alt="640.png"><br>当我们打开这个工具的时候，只需要给对方拨打一个电话，不管对方有没有接听，你都可以获取到对方的 IP 地址：<br><img src="https://i.loli.net/2020/11/17/Cz7ejy963ofB8gK.png" alt="1605578110_1_.jpg"><br>##3. 通过 IP 进行定位<br>当我们获取到了对方的 IP 地址之后，也可以通过 IP 进行大概位置的定位（有五公里以内的误差）：<br>IP查询网址：<a href="http://www.ipplus360.com" target="_blank" rel="noopener">www.ipplus360.com</a><br><img src="https://i.loli.net/2020/11/17/Ck1tm5ypiSOVv3h.png" alt="1605578186_1_.jpg"><br>##4. 利用经纬度进行二次解析<br>当我们通过IP地址进行查询后可以获得对方的大概地理位置，如果想进行二次精确定位的话，我们可以复制经纬度，在解析网站里面进行查询：<br>经纬度解析网站：map.yanue.net<br><img src="https://i.loli.net/2020/11/17/f7JZisK5qWjnVTd.png" alt="1605578401_1_.jpg"><br>##5. 通过你的邮箱/手机号查询你注册过的网站<br>查询网址：<a href="http://www.reg007.com" target="_blank" rel="noopener">www.reg007.com</a><br>这个网站就是利用你提交的信息去进行模拟注册来查询是否在该平台已经注册过：<br><img src="https://i.loli.net/2020/11/17/b3O8l9osHxkW4wC.png" alt="1605578385_1_.jpg"><br>##6. 利用支付宝查询你的名字<br>现在支付宝已经全面普及，我们可以利用已经获得到的一些信息，进行姓名猜解。<br>我们可以随意转账一笔大额资金给对方，这时，为了资金安全，支付宝会显示对方的名字，要求你补全对方的姓氏。<br>那么，我们可以使用常用的姓氏一个个进行尝试来暴力破解获取到对方全名。<br><img src="https://i.loli.net/2020/11/17/HOzrEmwaVc4jFev.png" alt="1605578366_1_.jpg"><br>##7. 把你知道的信息丢给百度查询<br><img src="https://i.loli.net/2020/11/17/dWuXfIYiwqap1gQ.png" alt="640.png"><br>这只是一个例子，不仅是QQ，还有 微信/常用ID/手机号 全部都可以进行查询，不法分子就可以利用这些信息进行电信诈骗！</p>
-<p>防止被人肉的措施：</p>
-<p>不要在网络上留下自己的QQ，手机号码等相关个人信息，否则会被搜索引擎保存成快照，从而被不法分子所获取；</p>
-<p>不要在所有网站使用同一个用户名；</p>
-<p>最好使用两张手机卡，一张日常通话使用，另一张在网上注册信息时用于接收验证码等操作；</p>
-<p>QQ，微信等社交软件最好不要使用同一个账户。</p>
-]]></content>
-      <categories>
-        <category>信息安全</category>
-      </categories>
-      <tags>
-        <tag>信息安全</tag>
-        <tag>信息查询</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue错误解决大全</title>
     <url>/archives/5ce8cd68/</url>
     <content><![CDATA[<h2 id="vue项目部署到服务器上刷新出现404以及白屏的问题"><a href="#vue项目部署到服务器上刷新出现404以及白屏的问题" class="headerlink" title="vue项目部署到服务器上刷新出现404以及白屏的问题"></a>vue项目部署到服务器上刷新出现404以及白屏的问题</h2><h3 id="1，如果部署在nginx上：项目打包的时候index-js修改assetsPublicPath-‘-’"><a href="#1，如果部署在nginx上：项目打包的时候index-js修改assetsPublicPath-‘-’" class="headerlink" title="1，如果部署在nginx上：项目打包的时候index.js修改assetsPublicPath: ‘/’"></a>1，如果部署在nginx上：项目打包的时候index.js修改assetsPublicPath: ‘/’</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    &#x2F;&#x2F; Template for index.html</span><br><span class="line">    index: path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;index.html&#39;),</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Paths</span><br><span class="line">    assetsRoot: path.resolve(__dirname, &#39;..&#x2F;dist&#39;),</span><br><span class="line">    assetsSubDirectory: &#39;static&#39;,</span><br><span class="line">    assetsPublicPath: &#39;&#x2F;&#39;,</span><br></pre></td></tr></table></figure></div>
