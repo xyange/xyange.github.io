@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>盘点 12 个 GitHub 上的高仿项目</title>
+    <url>/archives/9d0b5148/</url>
+    <content><![CDATA[<p>最近整理了现在比较热门 App 的高仿项目，这些项目都是有「recently updated」，而不是年代久远不再维护的项目。包括高仿微信、微博、B站、斗鱼、抖音、美团、头条、掘金等等。</p>
+<p>这些项目涉及的技术栈有 Vue、Flutter 等等，看这些高仿项目的源码有什么用呢？比如下面这个高仿知乎，采用 Flutter 技术栈，把代码 Download 下来，看着代码做一遍基本可以入门 Flutter，学会 APP 布局。</p>
+<h2 id="高仿知乎"><a href="#高仿知乎" class="headerlink" title="高仿知乎"></a>高仿知乎</h2><p>使用 Flutter 模仿的知乎黑色主题的 UI，在 我的 页中可以修改日间和夜间模式。<br>GitHub地址：<a href="https://github.com/xujiyou/zhihu-flutter" target="_blank" rel="noopener">https://github.com/xujiyou/zhihu-flutter</a></p>
+<h2 id="高仿微信"><a href="#高仿微信" class="headerlink" title="高仿微信"></a>高仿微信</h2><p>已实现的功能包括：消息界面、发现界面、好友搜索、聊天界面等。微信中常用功能都支持，比如：好友列表、好友搜索、好友资料、资料设置、新的朋友、群聊、标签、好友圈、扫一扫、摇一摇、漂流瓶、购物、游戏等等。<br>至于聊天功能，可以调节字体大小、更改聊天背景、我的表情、清空聊天记录。智慧城表情键盘（动态增删表情包）、文字消息、图片消息、表情消息、语音消息、聊天输入框、消息展示视图、聊天键盘、聊天记录存储等。<br>GitHub地址：<a href="https://github.com/tbl00c/TLChat" target="_blank" rel="noopener">https://github.com/tbl00c/TLChat</a></p>
+<h2 id="高仿炸弹特效"><a href="#高仿炸弹特效" class="headerlink" title="高仿炸弹特效"></a>高仿炸弹特效</h2><p>微信 8.0 来临，新版本微信中最吸引眼球的莫过于「表情特效」，尤其是超级震撼的「炸弹」更是把微信群炸上了天。<br>版本刚刚发布不就，就有前端大佬复现了「炸弹」特效，大佬折腾了许久，做出来的效果如下。不到 300 行代码，并且已经开源，教程和代码可以关注微信公众号「逛逛GitHub」回复「炸弹」获取代码。</p>
+<h2 id="仿美团外卖点餐"><a href="#仿美团外卖点餐" class="headerlink" title="仿美团外卖点餐"></a>仿美团外卖点餐</h2><p>前端用 vue+vuex+vue-router+axios，后端基于nodej.s的框架，数据库采用mongodb。功能涉及登录，定位，浏览商品，加购物车，下订单，支付(微信、支付宝扫码支付)，评价，个人信息更改。<br><a href="https://github.com/zwStar/vue-meituan" target="_blank" rel="noopener">https://github.com/zwStar/vue-meituan</a></p>
+<h2 id="精仿今日头条"><a href="#精仿今日头条" class="headerlink" title="精仿今日头条"></a>精仿今日头条</h2><p>数据是抓取今日头条 App 的数据。使用 RxJava + Retrofit + MVP 开发的开源项目。<br><a href="https://github.com/chaychan/TouTiao" target="_blank" rel="noopener">https://github.com/chaychan/TouTiao</a></p>
+<h2 id="高仿掘金"><a href="#高仿掘金" class="headerlink" title="高仿掘金"></a>高仿掘金</h2><p>仿照掘金客户端使用 Vue 开发的 WebApp。里面所有的API均来自官方Android。页面基本上和掘金App差不多，不过由于里面的一些图片本菜使用的是阿里的iconfont，因此会和掘金App上面的图片有点不一样，但是整体的功能和掘金App还是差不多的。<br>地址：<a href="https://github.com/sanfengliao/vue-juejin" target="_blank" rel="noopener">https://github.com/sanfengliao/vue-juejin</a></p>
+<h2 id="高仿微博"><a href="#高仿微博" class="headerlink" title="高仿微博"></a>高仿微博</h2><h3 id="iOS-版："><a href="#iOS-版：" class="headerlink" title="iOS 版："></a>iOS 版：</h3><p>Github 地址：<a href="https://github.com/sam408130/DSLolita" target="_blank" rel="noopener">https://github.com/sam408130/DSLolita</a></p>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android:"></a>Android:</h3><p>Github 地址：<a href="https://github.com/wenmingvs/WeiBo" target="_blank" rel="noopener">https://github.com/wenmingvs/WeiBo</a></p>
+<h2 id="iOS-仿抖音"><a href="#iOS-仿抖音" class="headerlink" title="iOS 仿抖音"></a>iOS 仿抖音</h2><p>这个抖音 Demo 适配 iPhone、iPad，同时兼容 iOS 8.0 - iOS 12.0系统。采用 Object-C 语言编写。标星 1.5K Star，项目地址：<br><a href="https://github.com/sshiqiao/douyin-ios-objectc" target="_blank" rel="noopener">https://github.com/sshiqiao/douyin-ios-objectc</a><br>本项目共分为三个部分：抖音个人主页实现、网络视频相关功能实现、WebSocket 实现 IM 即时聊天功能。</p>
+<h2 id="Android-仿抖音"><a href="#Android-仿抖音" class="headerlink" title="Android 仿抖音"></a>Android 仿抖音</h2><p>这个 Demo 涉及的技术要点如下：<br>Recycler + PagerSnapHelper 实现全屏切换播放效果，<br>使用 Lottie 库加载 Json 动画<br>BottomSheetDialogFragment 实现分享评论弹框功能<br>CoordinatorLayout + AppBarLayout 实现折叠布局。<br>该项目标星 1K Star，项目地址：<br><a href="https://github.com/18380438200/Tiktok" target="_blank" rel="noopener">https://github.com/18380438200/Tiktok</a></p>
+<h2 id="高仿-YouTube"><a href="#高仿-YouTube" class="headerlink" title="高仿 YouTube"></a>高仿 YouTube</h2><p>iOS版本，Github 地址：<br><a href="https://github.com/aslanyanhaik/youtube-iOS" target="_blank" rel="noopener">https://github.com/aslanyanhaik/youtube-iOS</a></p>
+<p>安卓版本，Github 地址：<br><a href="https://github.com/TeamNewPipe/NewPi" target="_blank" rel="noopener">https://github.com/TeamNewPipe/NewPi</a></p>
+<h2 id="仿斗鱼直播-APP"><a href="#仿斗鱼直播-APP" class="headerlink" title="仿斗鱼直播 APP"></a>仿斗鱼直播 APP</h2><p>flutter 重构的斗鱼直播 APP，首页、娱乐为Material组件；直播间、鱼吧为纯自定义编写。GitHub 地址：<br><a href="https://github.com/yukilzw/dy_flutter" target="_blank" rel="noopener">https://github.com/yukilzw/dy_flutter</a></p>
+<h2 id="仿网易云音乐"><a href="#仿网易云音乐" class="headerlink" title="仿网易云音乐"></a>仿网易云音乐</h2><p>基于 flutter 的仿网易云音乐软件，支持  iOS 和 Android。GitHub 地址：<br><a href="https://github.com/boyan01/flutter-netease-music" target="_blank" rel="noopener">https://github.com/boyan01/flutter-netease-music</a></p>
+<h2 id="高仿-B站"><a href="#高仿-B站" class="headerlink" title="高仿 B站"></a>高仿 B站</h2><p>基于 react 和 express 开发的，高仿B站 Web 移动端，GitHub 项目：<br><a href="https://github.com/code-mcx/react-bilibili" target="_blank" rel="noopener">https://github.com/code-mcx/react-bilibili</a></p>
+<h2 id="高仿Bilibili"><a href="#高仿Bilibili" class="headerlink" title="高仿Bilibili"></a>高仿Bilibili</h2><h3 id="iOS-版-Github-地址："><a href="#iOS-版-Github-地址：" class="headerlink" title="iOS 版 Github 地址："></a>iOS 版 Github 地址：</h3><p><a href="https://github.com/MichaelHuyp/Bilibili_Wuxianda" target="_blank" rel="noopener">https://github.com/MichaelHuyp/Bilibili_Wuxianda</a></p>
+<h3 id="Android-版本-Github-地址："><a href="#Android-版本-Github-地址：" class="headerlink" title="Android 版本 Github 地址："></a>Android 版本 Github 地址：</h3><p><a href="https://github.com/HotBitmapGG/bilibili-android-client" target="_blank" rel="noopener">https://github.com/HotBitmapGG/bilibili-android-client</a></p>
+<p>最后，防止找不到本篇文章，可以评论转载，方便翻阅查找。转载请注明出处。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>互联网上那些防不胜防的搜索技巧</title>
+    <url>/archives/364a1c48/</url>
+    <content><![CDATA[<h2 id="1-一张照片查出你的拍摄地点"><a href="#1-一张照片查出你的拍摄地点" class="headerlink" title="1. 一张照片查出你的拍摄地点"></a>1. 一张照片查出你的拍摄地点</h2><p>随着智能手机的普及，现在人们大部分使用手机进行拍照，而大多数相机已经默认开启地理位置，如下图：<br><img src="https://i.loli.net/2020/11/17/4G2pVjHgrJ1PCyh.png" alt="1605577719_1_.jpg"><br>在开启了这种功能的情况下拍摄的照片会自动存有你所拍照地点的经纬度信息：<br><img src="https://i.loli.net/2020/11/17/XIGFmSZWCQqvAut.png" alt="1605577693_1_.png"><br>有了经纬度信息，我们可以在 MagicExif 软件里查询到照片拍摄地的具体地址（精确到门牌号的那种地步！！！）<br><img src="https://i.loli.net/2020/11/17/JgZinDNIPfhpeLV.png" alt="1605577888_1_.jpg"></p>
+<h2 id="2-给你打个语音通话获取你的-IP-地址"><a href="#2-给你打个语音通话获取你的-IP-地址" class="headerlink" title="2. 给你打个语音通话获取你的 IP 地址"></a>2. 给你打个语音通话获取你的 IP 地址</h2><p>我们在 QQ 聊天时都是通过数据进行传输，那么使用一个抓包工具，只要数据传输到对方并且对方在线，我们就可以获取到对方的 IP 信息：<br><img src="https://i.loli.net/2020/11/17/5iMaFfp1OsSHlcm.png" alt="640.png"><br>当我们打开这个工具的时候，只需要给对方拨打一个电话，不管对方有没有接听，你都可以获取到对方的 IP 地址：<br><img src="https://i.loli.net/2020/11/17/Cz7ejy963ofB8gK.png" alt="1605578110_1_.jpg"><br>##3. 通过 IP 进行定位<br>当我们获取到了对方的 IP 地址之后，也可以通过 IP 进行大概位置的定位（有五公里以内的误差）：<br>IP查询网址：<a href="http://www.ipplus360.com" target="_blank" rel="noopener">www.ipplus360.com</a><br><img src="https://i.loli.net/2020/11/17/Ck1tm5ypiSOVv3h.png" alt="1605578186_1_.jpg"><br>##4. 利用经纬度进行二次解析<br>当我们通过IP地址进行查询后可以获得对方的大概地理位置，如果想进行二次精确定位的话，我们可以复制经纬度，在解析网站里面进行查询：<br>经纬度解析网站：map.yanue.net<br><img src="https://i.loli.net/2020/11/17/f7JZisK5qWjnVTd.png" alt="1605578401_1_.jpg"><br>##5. 通过你的邮箱/手机号查询你注册过的网站<br>查询网址：<a href="http://www.reg007.com" target="_blank" rel="noopener">www.reg007.com</a><br>这个网站就是利用你提交的信息去进行模拟注册来查询是否在该平台已经注册过：<br><img src="https://i.loli.net/2020/11/17/b3O8l9osHxkW4wC.png" alt="1605578385_1_.jpg"><br>##6. 利用支付宝查询你的名字<br>现在支付宝已经全面普及，我们可以利用已经获得到的一些信息，进行姓名猜解。<br>我们可以随意转账一笔大额资金给对方，这时，为了资金安全，支付宝会显示对方的名字，要求你补全对方的姓氏。<br>那么，我们可以使用常用的姓氏一个个进行尝试来暴力破解获取到对方全名。<br><img src="https://i.loli.net/2020/11/17/HOzrEmwaVc4jFev.png" alt="1605578366_1_.jpg"><br>##7. 把你知道的信息丢给百度查询<br><img src="https://i.loli.net/2020/11/17/dWuXfIYiwqap1gQ.png" alt="640.png"><br>这只是一个例子，不仅是QQ，还有 微信/常用ID/手机号 全部都可以进行查询，不法分子就可以利用这些信息进行电信诈骗！</p>
+<p>防止被人肉的措施：</p>
+<p>不要在网络上留下自己的QQ，手机号码等相关个人信息，否则会被搜索引擎保存成快照，从而被不法分子所获取；</p>
+<p>不要在所有网站使用同一个用户名；</p>
+<p>最好使用两张手机卡，一张日常通话使用，另一张在网上注册信息时用于接收验证码等操作；</p>
+<p>QQ，微信等社交软件最好不要使用同一个账户。</p>
+]]></content>
+      <categories>
+        <category>信息安全</category>
+      </categories>
+      <tags>
+        <tag>信息安全</tag>
+        <tag>信息查询</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue错误解决大全</title>
     <url>/archives/5ce8cd68/</url>
     <content><![CDATA[<h2 id="vue项目部署到服务器上刷新出现404以及白屏的问题"><a href="#vue项目部署到服务器上刷新出现404以及白屏的问题" class="headerlink" title="vue项目部署到服务器上刷新出现404以及白屏的问题"></a>vue项目部署到服务器上刷新出现404以及白屏的问题</h2><h3 id="1，如果部署在nginx上：项目打包的时候index-js修改assetsPublicPath-‘-’"><a href="#1，如果部署在nginx上：项目打包的时候index-js修改assetsPublicPath-‘-’" class="headerlink" title="1，如果部署在nginx上：项目打包的时候index.js修改assetsPublicPath: ‘/’"></a>1，如果部署在nginx上：项目打包的时候index.js修改assetsPublicPath: ‘/’</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    &#x2F;&#x2F; Template for index.html</span><br><span class="line">    index: path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;index.html&#39;),</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Paths</span><br><span class="line">    assetsRoot: path.resolve(__dirname, &#39;..&#x2F;dist&#39;),</span><br><span class="line">    assetsSubDirectory: &#39;static&#39;,</span><br><span class="line">    assetsPublicPath: &#39;&#x2F;&#39;,</span><br></pre></td></tr></table></figure></div>

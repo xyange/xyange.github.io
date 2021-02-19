@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xyange.xyz/"/>
-  <updated>2020-12-22T08:00:08.784Z</updated>
+  <updated>2021-02-19T05:55:38.264Z</updated>
   <id>https://xyange.xyz/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>盘点 12 个 GitHub 上的高仿项目</title>
+    <link href="https://xyange.xyz/archives/9d0b5148/"/>
+    <id>https://xyange.xyz/archives/9d0b5148/</id>
+    <published>2021-02-19T05:32:00.000Z</published>
+    <updated>2021-02-19T05:55:38.264Z</updated>
+    
+    <summary type="html">
+    
+      高仿微信、微博、B站、斗鱼、抖音、美团、头条、掘金等等。
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.xyz/categories/Java/"/>
+    
+      <category term="Android" scheme="https://xyange.xyz/categories/Java/Android/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.xyz/tags/Android/"/>
+    
+      <category term="Java" scheme="https://xyange.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>互联网上那些防不胜防的搜索技巧</title>
+    <link href="https://xyange.xyz/archives/364a1c48/"/>
+    <id>https://xyange.xyz/archives/364a1c48/</id>
+    <published>2020-11-17T01:45:00.000Z</published>
+    <updated>2021-02-19T05:35:36.720Z</updated>
+    
+    <summary type="html">
+    
+      互联网上那些防不胜防的搜索技巧。
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="https://xyange.xyz/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="信息安全" scheme="https://xyange.xyz/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="信息查询" scheme="https://xyange.xyz/tags/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue错误解决大全</title>
