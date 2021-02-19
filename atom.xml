@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xyange.xyz/"/>
-  <updated>2021-02-19T05:55:38.264Z</updated>
+  <updated>2021-02-19T08:01:36.331Z</updated>
   <id>https://xyange.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java优秀开源项目汇总（个人心得）</title>
+    <link href="https://xyange.xyz/archives/221b6a9f/"/>
+    <id>https://xyange.xyz/archives/221b6a9f/</id>
+    <published>2021-02-19T07:24:00.000Z</published>
+    <updated>2021-02-19T08:01:36.331Z</updated>
+    
+    <summary type="html">
+    
+      开源项目助你拿高薪。
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.xyz/categories/Java/"/>
+    
+      <category term="Vue" scheme="https://xyange.xyz/categories/Java/Vue/"/>
+    
+    
+      <category term="Java" scheme="https://xyange.xyz/tags/Java/"/>
+    
+      <category term="Vue" scheme="https://xyange.xyz/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>盘点 12 个 GitHub 上的高仿项目</title>
@@ -464,35 +489,6 @@
     
     
       <category term="hexo admin" scheme="https://xyange.xyz/tags/hexo-admin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>超详细Hexo+Github Page搭建技术博客教程</title>
-    <link href="https://xyange.xyz/archives/35b1a77b/"/>
-    <id>https://xyange.xyz/archives/35b1a77b/</id>
-    <published>2020-03-05T08:07:00.000Z</published>
-    <updated>2021-02-19T04:45:56.640Z</updated>
-    
-    <summary type="html">
-    
-      CSDN三年码龄的博主转战Hexo。非常详细的Hexo部署到Github，Coding，个人域名的教程。
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://xyange.xyz/categories/Hexo/"/>
-    
-    
-      <category term="hexo next" scheme="https://xyange.xyz/tags/hexo-next/"/>
-    
-      <category term="Github Page" scheme="https://xyange.xyz/tags/Github-Page/"/>
-    
-      <category term="Coding" scheme="https://xyange.xyz/tags/Coding/"/>
-    
-      <category term="百度收录" scheme="https://xyange.xyz/tags/%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/"/>
-    
-      <category term="蜘蛛协议" scheme="https://xyange.xyz/tags/%E8%9C%98%E8%9B%9B%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   
