@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://140520.xyz/about/index.html</loc>
+    
+    <lastmod>2021-03-03T06:01:46.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://140520.xyz/links/index.html</loc>
     
     <lastmod>2021-03-03T03:57:25.843Z</lastmod>
@@ -80,13 +87,6 @@
   
   <url>
     <loc>https://140520.xyz/categories/index.html</loc>
-    
-    <lastmod>2020-12-22T08:00:08.788Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://140520.xyz/about/index.html</loc>
     
     <lastmod>2020-12-22T08:00:08.788Z</lastmod>
     
