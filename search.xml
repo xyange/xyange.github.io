@@ -1177,8 +1177,8 @@ var vm = new Vue({
         <category>Vue</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>Vue</tag>
+        <tag>前端</tag>
         <tag>RuoYi</tag>
       </tags>
   </entry>
@@ -1332,8 +1332,8 @@ var vm = new Vue({
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>区块链</tag>
         <tag>Java</tag>
+        <tag>区块链</tag>
       </tags>
   </entry>
   <entry>
