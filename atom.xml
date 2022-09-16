@@ -10,7 +10,7 @@
   <id>https://140520.xyz/</id>
   
   <author>
-    <name>小眼哥</name>
+    <name>xyange</name>
     
   </author>
   
@@ -328,9 +328,9 @@
       <category term="Vue" scheme="https://140520.xyz/categories/Vue/"/>
     
     
-      <category term="Vue" scheme="https://140520.xyz/tags/Vue/"/>
-    
       <category term="前端" scheme="https://140520.xyz/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="https://140520.xyz/tags/Vue/"/>
     
       <category term="RuoYi" scheme="https://140520.xyz/tags/RuoYi/"/>
     
