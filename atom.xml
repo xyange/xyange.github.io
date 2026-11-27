@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xyange&#39;s Blog</title>
+  
+  <subtitle>唯有梦想与好姑娘不可辜负!!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://xyange.github.io/"/>
+  <updated>2026-11-27T06:06:08.837Z</updated>
+  <id>https://xyange.github.io/</id>
+  
+  <author>
+    <name>xyange</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu搭建nfs服务centos挂载访问</title>
+    <link href="https://xyange.github.io/archives/50d1d246/"/>
+    <id>https://xyange.github.io/archives/50d1d246/</id>
+    <published>2026-11-27T01:39:45.000Z</published>
+    <updated>2026-11-27T06:06:08.837Z</updated>
+    
+    <summary type="html">
+    
+      ubuntu搭建nfs服务centos挂载访问
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="https://xyange.github.io/categories/ubuntu/"/>
+    
+      <category term="centos" scheme="https://xyange.github.io/categories/ubuntu/centos/"/>
+    
+      <category term="nfs" scheme="https://xyange.github.io/categories/ubuntu/centos/nfs/"/>
+    
+    
+      <category term="ubuntu" scheme="https://xyange.github.io/tags/ubuntu/"/>
+    
+      <category term="centos" scheme="https://xyange.github.io/tags/centos/"/>
+    
+      <category term="nfs" scheme="https://xyange.github.io/tags/nfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不同坐标系经纬度转换</title>
+    <link href="https://xyange.github.io/archives/2cd0cd9f/"/>
+    <id>https://xyange.github.io/archives/2cd0cd9f/</id>
+    <published>2022-09-14T07:30:25.000Z</published>
+    <updated>2026-11-27T00:59:15.689Z</updated>
+    
+    <summary type="html">
+    
+      BD09、GCJ02、WGS84以及经纬度、墨卡托的转换
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/categories/Java/"/>
+    
+      <category term="地图" scheme="https://xyange.github.io/categories/Java/%E5%9C%B0%E5%9B%BE/"/>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/tags/Java/"/>
+    
+      <category term="地图" scheme="https://xyange.github.io/tags/%E5%9C%B0%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dll、so库转Java代码</title>
+    <link href="https://xyange.github.io/archives/69a1830/"/>
+    <id>https://xyange.github.io/archives/69a1830/</id>
+    <published>2021-12-25T01:39:45.000Z</published>
+    <updated>2026-11-27T00:59:15.688Z</updated>
+    
+    <summary type="html">
+    
+      jnaerator:java调用动态库的神器,JNA代码自动生成工具
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/categories/Java/"/>
+    
+      <category term="jna" scheme="https://xyange.github.io/categories/Java/jna/"/>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/tags/Java/"/>
+    
+      <category term="动态链接库" scheme="https://xyange.github.io/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源地图服务器搭建</title>
+    <link href="https://xyange.github.io/archives/19ec099c/"/>
+    <id>https://xyange.github.io/archives/19ec099c/</id>
+    <published>2021-04-29T02:32:43.000Z</published>
+    <updated>2026-11-27T00:59:15.690Z</updated>
+    
+    <summary type="html">
+    
+      qgis绘图 + geoserver提供地图服务 + postgresql &amp; postgis提供地理数据库支持 + openlayer提供页面js开发支持。
+    
+    </summary>
+    
+    
+      <category term="GIS" scheme="https://xyange.github.io/categories/GIS/"/>
+    
+    
+      <category term="GIS" scheme="https://xyange.github.io/tags/GIS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人月神话心得</title>
+    <link href="https://xyange.github.io/archives/59265047/"/>
+    <id>https://xyange.github.io/archives/59265047/</id>
+    <published>2021-02-19T08:08:00.000Z</published>
+    <updated>2026-11-27T00:59:15.689Z</updated>
+    
+    <summary type="html">
+    
+      软工经典书籍强烈推荐。
+    
+    </summary>
+    
+    
+      <category term="项目管理" scheme="https://xyange.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="项目管理" scheme="https://xyange.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="软件方法" scheme="https://xyange.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java优秀开源项目汇总（个人心得）</title>
+    <link href="https://xyange.github.io/archives/221b6a9f/"/>
+    <id>https://xyange.github.io/archives/221b6a9f/</id>
+    <published>2021-02-19T07:24:00.000Z</published>
+    <updated>2026-11-27T03:41:17.100Z</updated>
+    
+    <summary type="html">
+    
+      开源项目助你拿高薪。
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/categories/Java/"/>
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Java/Vue/"/>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/tags/Java/"/>
+    
+      <category term="Vue" scheme="https://xyange.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>盘点 12 个 GitHub 上的高仿项目</title>
+    <link href="https://xyange.github.io/archives/9d0b5148/"/>
+    <id>https://xyange.github.io/archives/9d0b5148/</id>
+    <published>2021-02-19T05:32:00.000Z</published>
+    <updated>2026-11-27T00:59:15.690Z</updated>
+    
+    <summary type="html">
+    
+      高仿微信、微博、B站、斗鱼、抖音、美团、头条、掘金等等。
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/categories/Java/"/>
+    
+      <category term="Android" scheme="https://xyange.github.io/categories/Java/Android/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/tags/Android/"/>
+    
+      <category term="Java" scheme="https://xyange.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>互联网上那些防不胜防的搜索技巧</title>
+    <link href="https://xyange.github.io/archives/364a1c48/"/>
+    <id>https://xyange.github.io/archives/364a1c48/</id>
+    <published>2020-11-17T01:45:00.000Z</published>
+    <updated>2026-11-27T00:59:15.689Z</updated>
+    
+    <summary type="html">
+    
+      互联网上那些防不胜防的搜索技巧。
+    
+    </summary>
+    
+    
+      <category term="信息安全" scheme="https://xyange.github.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="信息安全" scheme="https://xyange.github.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="信息查询" scheme="https://xyange.github.io/tags/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue错误解决大全</title>
+    <link href="https://xyange.github.io/archives/5ce8cd68/"/>
+    <id>https://xyange.github.io/archives/5ce8cd68/</id>
+    <published>2020-11-05T04:48:37.000Z</published>
+    <updated>2026-11-27T00:59:15.687Z</updated>
+    
+    <summary type="html">
+    
+      Vue错误解决大全。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue前端路由</title>
+    <link href="https://xyange.github.io/archives/994c80f7/"/>
+    <id>https://xyange.github.io/archives/994c80f7/</id>
+    <published>2020-11-02T05:19:55.000Z</published>
+    <updated>2026-11-27T00:59:15.686Z</updated>
+    
+    <summary type="html">
+    
+      Vue前端路由。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue前后端交互</title>
+    <link href="https://xyange.github.io/archives/890370f2/"/>
+    <id>https://xyange.github.io/archives/890370f2/</id>
+    <published>2020-11-02T05:07:46.000Z</published>
+    <updated>2026-11-27T00:59:15.686Z</updated>
+    
+    <summary type="html">
+    
+      Vue前后端交互。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue组件化开发</title>
+    <link href="https://xyange.github.io/archives/189c89bd/"/>
+    <id>https://xyange.github.io/archives/189c89bd/</id>
+    <published>2020-11-02T04:56:21.000Z</published>
+    <updated>2026-11-27T00:59:15.687Z</updated>
+    
+    <summary type="html">
+    
+      Vue组件化开发。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue基础语法</title>
+    <link href="https://xyange.github.io/archives/e0886ac8/"/>
+    <id>https://xyange.github.io/archives/e0886ac8/</id>
+    <published>2020-11-02T04:32:19.000Z</published>
+    <updated>2026-11-27T00:59:15.686Z</updated>
+    
+    <summary type="html">
+    
+      Vue基础语法。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows系统删除并改为Centos8.X系统</title>
+    <link href="https://xyange.github.io/archives/6815fed9/"/>
+    <id>https://xyange.github.io/archives/6815fed9/</id>
+    <published>2020-08-18T02:22:00.000Z</published>
+    <updated>2026-11-27T00:59:15.687Z</updated>
+    
+    <summary type="html">
+    
+      Windows系统删除并改为Centos8.X系统
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://xyange.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://xyange.github.io/tags/Linux/"/>
+    
+      <category term="服务器搭建" scheme="https://xyange.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初次 使用RuoYi 若依框架总结（前端）</title>
+    <link href="https://xyange.github.io/archives/a87e2227/"/>
+    <id>https://xyange.github.io/archives/a87e2227/</id>
+    <published>2020-08-16T05:00:00.000Z</published>
+    <updated>2026-11-27T00:59:15.690Z</updated>
+    
+    <summary type="html">
+    
+      初次 使用RuoYi 若依框架总结（前端）
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="https://xyange.github.io/tags/Vue/"/>
+    
+      <category term="前端" scheme="https://xyange.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="RuoYi" scheme="https://xyange.github.io/tags/RuoYi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过命令行生成Android数字证书</title>
+    <link href="https://xyange.github.io/archives/6bcd271c/"/>
+    <id>https://xyange.github.io/archives/6bcd271c/</id>
+    <published>2020-03-31T02:50:03.000Z</published>
+    <updated>2026-11-27T00:59:15.690Z</updated>
+    
+    <summary type="html">
+    
+      通过命令行生成Android数字证书。
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/tags/Android/"/>
+    
+      <category term="Android Studio" scheme="https://xyange.github.io/tags/Android-Studio/"/>
+    
+      <category term="证书" scheme="https://xyange.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot简化配置原理</title>
+    <link href="https://xyange.github.io/archives/b3d53c83/"/>
+    <id>https://xyange.github.io/archives/b3d53c83/</id>
+    <published>2020-03-30T05:44:00.000Z</published>
+    <updated>2026-11-27T00:59:15.685Z</updated>
+    
+    <summary type="html">
+    
+      SpringBoot简化配置原理。
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://xyange.github.io/tags/Java/"/>
+    
+      <category term="SpringBoot" scheme="https://xyange.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Studio编译报错总结</title>
+    <link href="https://xyange.github.io/archives/32c89b04/"/>
+    <id>https://xyange.github.io/archives/32c89b04/</id>
+    <published>2020-03-30T05:34:19.000Z</published>
+    <updated>2026-11-27T00:59:15.684Z</updated>
+    
+    <summary type="html">
+    
+      Android Studio编译报错总结。
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/tags/Android/"/>
+    
+      <category term="Android Studio" scheme="https://xyange.github.io/tags/Android-Studio/"/>
+    
+      <category term="异常" scheme="https://xyange.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Java的Android区块链钱包开发(XRP篇)</title>
+    <link href="https://xyange.github.io/archives/7937af06/"/>
+    <id>https://xyange.github.io/archives/7937af06/</id>
+    <published>2020-03-13T05:52:00.000Z</published>
+    <updated>2026-11-27T00:59:15.687Z</updated>
+    
+    <summary type="html">
+    
+      瑞波币助记词生成公私钥、地址、查余额、转账等相关功能。
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://xyange.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/tags/Android/"/>
+    
+      <category term="区块链" scheme="https://xyange.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="XRP" scheme="https://xyange.github.io/tags/XRP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Java的Android区块链钱包开发(ETH篇)</title>
+    <link href="https://xyange.github.io/archives/f9f76d56/"/>
+    <id>https://xyange.github.io/archives/f9f76d56/</id>
+    <published>2020-03-13T05:49:00.000Z</published>
+    <updated>2026-11-27T00:59:15.685Z</updated>
+    
+    <summary type="html">
+    
+      以太坊助记词生成公私钥、地址、查余额、转账等相关功能。
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://xyange.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+      <category term="Android" scheme="https://xyange.github.io/tags/Android/"/>
+    
+      <category term="区块链" scheme="https://xyange.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="ETH" scheme="https://xyange.github.io/tags/ETH/"/>
+    
+  </entry>
+  
+</feed>
